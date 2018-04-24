@@ -1,0 +1,96 @@
+Entities - fase 0 define entities
+
+ * - Users
+
+    - name
+    - pw
+    - pw_confirmation
+    - interprise_id
+    - email
+    - secondary_email
+    - points max(x)
+    - total_points
+    - profile_photo
+
+  * - Goals - Reward
+
+    Table ok
+
+    - coast
+    - name
+    - general infos
+    - image - photo - polymorph
+
+  * - Interprise - Organization
+
+     Table ok
+
+    - Trading name
+    - contact_email
+    - contact_phones
+    - plan_id
+    - plan_addiquire_date
+
+  * - Plans (?)
+
+      - name
+      - coast
+      - billing (?)
+
+   * - Posts -
+
+        Table ok
+
+      - 2 user_id
+      - points
+      - message - text limit
+      - hashtag_id - enterprise values
+      - enterprise_id
+
+   * - Points
+
+      - user_id
+      - recieved_total_points
+      - actual_points
+      - spended_points
+
+    * - Contact us
+
+--------------------------------------------
+
+ * - billing subscription
+    Ids
+    https://www.braintreepayments.com/braintree-pricing-us
+
+ * - roles
+
+     -  job-user
+     -  job-admin
+     -  enterprise
+     -  master admin
+
+ * - on profile
+
+     - points
+     - posts
+
+ * - commum
+
+    - posts
+    - enterprise feed
+    - points
+    - poinst resets
+    - goals
+
+
+
+ * - Emails mkt
+
+
+
+     - --- Config
+
+      - devise token auth (?)
+
+
+    
