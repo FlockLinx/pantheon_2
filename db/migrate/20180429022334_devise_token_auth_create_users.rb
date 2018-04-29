@@ -35,9 +35,9 @@ class DeviseTokenAuthCreateUsers < ActiveRecord::Migration[5.2]
       t.string :email
       t.string :secondary_email
       t.integer :created_by_user_id
-      t.boolean :active
+      t.boolean :active, :default => false
       t.string :role
-      
+
       ## Tokens
       t.json :tokens
 

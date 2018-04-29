@@ -52,6 +52,7 @@ class UsersController < ApplicationController
       :created_by_user_id,
       :active,
       :uid
+    )
   end
 
   def set_user
@@ -63,6 +64,5 @@ class UsersController < ApplicationController
     params[:user].delete(:password)
     params[:user].delete(:password_confirmation)
   end
-end
-
+  
 end
