@@ -28,7 +28,15 @@ gem 'fast_jsonapi'
 # Paginate
 gem 'kaminari'
 
+# Auth
+gem 'devise'
+gem 'omniauth'
+gem 'devise_token_auth'
 gem 'pundit'
+
+# Health Check for server status
+gem 'health_check'
+
 
 # Background jobs
 gem 'sinatra', git: "https://github.com/sinatra/sinatra"
