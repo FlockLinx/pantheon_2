@@ -34,6 +34,8 @@ gem 'omniauth'
 gem 'devise_token_auth'
 gem 'pundit'
 
+gem 'rack-cors'
+
 # Health Check for server status
 gem 'health_check'
 
