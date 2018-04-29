@@ -7,7 +7,7 @@ class CreatePosts < ActiveRecord::Migration[5.2]
       t.string :star_amount
       t.integer :amount
       t.integer :ordanization_id
-      t.string  :tags, default: ''
+      t.string  :tags, array: true, default: []
 
       t.timestamps
     end
