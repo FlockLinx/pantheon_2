@@ -53,25 +53,7 @@ class V1::OrganizationsController < ApplicationController
   def organization_params
     params.require(:organization).permit(
       :trading_name,
-      :cnes,
-      cnpj: [:number],
-      cpf: [:number],
-      address_attributes: [
-        :id,
-        :uf,
-        :street,
-        :number,
-        :zipcode,
-        :complement,
-        :city,
-        :neighborhood,
-        :_destroy
-      ],
-      phones_attributes: [
-        :id,
-        :number,
-        :_destroy
-      ]
+      organization_tags: []
     )
   end
 end

@@ -34,8 +34,6 @@ gem 'omniauth'
 gem 'devise_token_auth'
 gem 'pundit'
 
-gem 'rack-cors'
-
 # Health Check for server status
 gem 'health_check'
 
@@ -53,7 +51,7 @@ gem 'rack-cors'
 gem 'rack-attack'
 
 # Reduces boot times through caching; required in config/boot.rb
-# gem 'bootsnap', '>= 1.1.0', require: false
+gem 'bootsnap', '>= 1.1.0', require: false
 
 # Use Rack CORS for handling Cross-Origin Resource Sharing (CORS), making cross-origin AJAX possible
 # gem 'rack-cors'
