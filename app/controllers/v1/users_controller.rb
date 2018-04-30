@@ -1,4 +1,4 @@
-class UsersController < ApplicationController
+class V1::UsersController < ApplicationController
   before_action :set_user, only: [:show, :edit, :update, :destroy]
   before_action :delete_password_from_params, only: :update
 
@@ -64,5 +64,5 @@ class UsersController < ApplicationController
     params[:user].delete(:password)
     params[:user].delete(:password_confirmation)
   end
-  
+
 end
