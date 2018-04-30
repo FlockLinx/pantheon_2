@@ -16,10 +16,10 @@ Entities - fase 0 define entities
 
     Table ok
 
-    - coast
+    - cost
     - name
     - general infos
-    - image - photo - polymorph
+    - image - photo - s3 url
 
   * - Interprise - Organization
 
@@ -91,6 +91,3 @@ Entities - fase 0 define entities
      - --- Config
 
       - devise token auth (?)
-
-
-    
