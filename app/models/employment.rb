@@ -1,10 +1,5 @@
 class Employment < ApplicationRecord
-  belongs_to :userable, polymorphic: true
-  belongs_to :placeable, polymorphic: true
-
-  validates_uniqueness_of :userable_id, scope: [:placeable_id, :placeable_type]
-
-  validates :placeable, :userable, presence: true
+  validates :organization_id, :user_id, presence: true
 
   def disable
     disabled = true
