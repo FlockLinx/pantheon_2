@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_04_29_022655) do
+ActiveRecord::Schema.define(version: 2018_04_30_233923) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -20,6 +20,7 @@ ActiveRecord::Schema.define(version: 2018_04_29_022655) do
     t.bigint "organization_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.boolean "active_job", default: true
     t.index ["organization_id"], name: "index_employments_on_organization_id"
     t.index ["user_id"], name: "index_employments_on_user_id"
   end
@@ -37,7 +38,7 @@ ActiveRecord::Schema.define(version: 2018_04_29_022655) do
     t.string "cause"
     t.string "star_amount"
     t.integer "amount"
-    t.integer "ordanization_id"
+    t.integer "organization_id"
     t.string "tags", default: [], array: true
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
@@ -47,7 +48,7 @@ ActiveRecord::Schema.define(version: 2018_04_29_022655) do
     t.string "name"
     t.integer "cost"
     t.string "displaed_cost"
-    t.integer "ordanization_id"
+    t.integer "organization_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
