@@ -4,7 +4,7 @@ class V1::PostsController < ApplicationController
   #   short 'Post'
   # end
 
-  before_action :set_post, only: [:show, :update]
+  # before_action :set_post, only: [:show, :update]
   # before_action :authenticate_user!
 
   # api :GET, '/post', 'Mostra instituicoes'
@@ -35,7 +35,7 @@ class V1::PostsController < ApplicationController
   def create
     @post = Post.new post_params
 
-    authorize @post
+    # authorize @post
 
     if @post.save
       render json: @post
