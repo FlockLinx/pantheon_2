@@ -7,20 +7,20 @@ class V1::PostsController < ApplicationController
   # before_action :set_post, only: [:show, :update]
   # before_action :authenticate_user!
 
-  # api :GET, '/post', 'Mostra instituicoes'
+  # api :GET, '/posts', 'Feed da organization'
   def index
     @post = Post.all
     render json: @post
   end
 
-  # api :GET, '/post/:id', 'Mostra instituicao individualmente'
+  # api :GET, '/post/:id', 'Mostra o post'
   def show
     authorize @post
 
     render json: @post
   end
 
-  # api :PUT, '/post/:id', 'Atualiza uma instituicao de saude'
+  # api :PUT, '/post/:id', 'Atualiza o post'
   def update
     authorize @post
 
@@ -31,7 +31,7 @@ class V1::PostsController < ApplicationController
     end
   end
 
-  # api :POST, '/post', 'Cria uma nova instituicao de saude com seu CNPJ
+  # api :POST, '/post', 'Cria um novo post
   def create
     @post = Post.new post_params
 
@@ -57,6 +57,7 @@ class V1::PostsController < ApplicationController
       :cause,
       :star_amount,
       :amount,
+      :tags,
       :organization_id
     )
   end

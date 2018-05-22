@@ -67,6 +67,7 @@ group :development, :test do
   gem 'shoulda-matchers', require: false
   gem 'better_errors'
   gem 'faker'
+  gem 'rails-erd', group: :development
 end
 
 group :development do
