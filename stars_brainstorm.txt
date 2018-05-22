@@ -1,0 +1,29 @@
+Sistema de estrelas
+
+
+ - user
+    * Fields
+     - quantidade de estrelas total - integer - Star_amount_int
+     - quantidade de estrelas total -  String - Star_amount_stg
+     - estrelas disponiveis para doar - integer - Star_available_amount_int
+     - estrelas disponiveis para doar - string  - Sta_availabler_amount_stg
+
+   * Feature
+      - reset automatico se ao fim do mes sobrar estrelas
+
+  - organization
+
+    * Feature
+      - qtas estrelas a organization disponibiliza por mes
+      - opcao de reset mensal (?) - HOLD
+
+-  Uma table de estrelas?
+
+  Qual o conceito?
+
+   -  A ideia eh que os usuarios compartilhem estrelas entre si
+   -  Que a quantidade de estrelas ganhas possam ser trocadas por premios (rewards).
+
+  A quem **pertencem** as estrelas?
+
+     - Aos usuarios - cada 1 tem uma quantidade de estrelas 

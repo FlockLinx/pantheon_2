@@ -7,20 +7,14 @@ class V1::OrganizationsController < ApplicationController
   before_action :set_organization, only: [:show, :update]
   # before_action :authenticate_user!
 
-  # api :GET, '/organization', 'Mostra instituicoes'
-  def index
-    @organization = Organization.all
-    render json: @organization
-  end
-
-  # api :GET, '/organization/:id', 'Mostra instituicao individualmente'
+  # api :GET, '/organization/:id', 'Mostra instituicao organization'
   def show
     authorize @organization
 
     render json: @organization
   end
 
-  # api :PUT, '/organization/:id', 'Atualiza uma instituicao de saude'
+  # api :PUT, '/organization/:id', 'Atualiza uma organization'
   def update
     authorize @organization
 
@@ -31,7 +25,7 @@ class V1::OrganizationsController < ApplicationController
     end
   end
 
-  # api :POST, '/organization', 'Cria uma nova instituicao de saude com seu CNPJ
+  # api :POST, '/organization', 'Cria uma nova organization
   def create
     @organization = Organization.new organization_params
 

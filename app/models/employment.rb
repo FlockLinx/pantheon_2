@@ -1,14 +1,7 @@
 class Employment < ApplicationRecord
   validates :organization_id, :user_id, presence: true
-
-  def disable
-    disabled = true
-  end
-
-  def disable!
-    disable
-    save
-  end
+  belongs_to :user
+  belongs_to :organization
 
   private
 end
