@@ -1,7 +1,7 @@
 source 'https://rubygems.org'
 git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
-ruby '2.3.0'
+ruby '2.3.1'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.2.0'
@@ -22,6 +22,34 @@ gem 'puma', '~> 3.11'
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
+# Serialization
+gem 'fast_jsonapi'
+
+# Paginate
+gem 'kaminari'
+
+# Auth
+gem 'devise'
+gem 'omniauth'
+gem 'devise_token_auth'
+gem 'pundit'
+
+# Health Check for server status
+gem 'health_check'
+
+
+# Background jobs
+gem 'sinatra', git: "https://github.com/sinatra/sinatra"
+gem 'sidekiq'
+gem 'sidetiq'
+
+# Code Style and Best Pratices
+gem 'rubocop', require: false
+
+# CORS
+gem 'rack-cors'
+gem 'rack-attack'
+
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '>= 1.1.0', require: false
 
@@ -31,6 +59,15 @@ gem 'bootsnap', '>= 1.1.0', require: false
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
+  gem 'simplecov', require: false
+  gem 'rspec-rails', '~> 3.0', require: false
+  gem 'rspec-mocks'
+  gem 'factory_bot'
+  gem 'awesome_print'
+  gem 'shoulda-matchers', require: false
+  gem 'better_errors'
+  gem 'faker'
+  gem 'rails-erd', group: :development
 end
 
 group :development do
@@ -40,6 +77,10 @@ group :development do
   gem 'spring-watcher-listen', '~> 2.0.0'
 end
 
+group :test do
+  gem 'database_cleaner'
+  gem 'rspec-sidekiq'
+end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]

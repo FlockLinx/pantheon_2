@@ -15,8 +15,14 @@
 
 # Ignore uploaded files in development
 /storage/*
+/config/database.yml
+/tmp
+/log/*.log
+Gemfile.lock
+
 
 .byebug_history
 
 # Ignore master key for decrypting credentials and more.
 /config/master.key
+*.DS_Store
