@@ -5,7 +5,7 @@ class V1::OrganizationsController < ApplicationController
   # end
 
   before_action :set_organization, only: [:show, :update]
-  # before_action :authenticate_user!
+  before_action :authenticate_user!
 
   # api :GET, '/organization/:id', 'Mostra instituicao organization'
   def show
@@ -29,7 +29,7 @@ class V1::OrganizationsController < ApplicationController
   def create
     @organization = Organization.new organization_params
 
-    authorize @organization
+    # authorize @organization
 
     if @organization.save
       render json: @organization

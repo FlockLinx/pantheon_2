@@ -1,10 +1,9 @@
 class V1::EmploymentsController < ApplicationController
 
-  # before_action :authenticate_user!
-  # before_action :set_relation, only: [:create, :destroy]
+  before_action :authenticate_user!
 
   def create
-    @job = Employment.new job_params
+    @job = Employment.new employment_params
 
     if @job.save
       render json: @job
@@ -19,8 +18,8 @@ class V1::EmploymentsController < ApplicationController
 
   private
 
-  def job_params
-    params.require(:job).permit(
+  def employment_params
+    params.require(:employment).permit(
       :user_id,
       :organization_id
     )

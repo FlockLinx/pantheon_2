@@ -1,4 +1,4 @@
-class RewardPolicy
+class OrganizationPolicy
   attr_reader :user, :record
 
   def initialize(user, record)
