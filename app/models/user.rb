@@ -9,4 +9,9 @@ class User < ApplicationRecord
   enum role: { dummy: 0, org_admin: 1 }
 
   include DeviseTokenAuth::Concerns::User
+
+
+  def search_by_name name
+    organization.users.where('name ILIKE ?', "%#{name}%")
+  end
 end
