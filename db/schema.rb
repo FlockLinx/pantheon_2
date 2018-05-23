@@ -10,7 +10,11 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
+<<<<<<< HEAD
+ActiveRecord::Schema.define(version: 2018_05_23_194437) do
+=======
 ActiveRecord::Schema.define(version: 2018_05_23_182126) do
+>>>>>>> 36055a56d7b842613ef5409dfa565954c3f63ab2
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -30,6 +34,8 @@ ActiveRecord::Schema.define(version: 2018_05_23_182126) do
     t.string "organization_tags", default: [], array: true
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "created_by_user_id"
+    t.integer "owner_id"
   end
 
   create_table "posts", force: :cascade do |t|
@@ -81,7 +87,7 @@ ActiveRecord::Schema.define(version: 2018_05_23_182126) do
     t.string "secondary_email"
     t.integer "created_by_user_id"
     t.boolean "active", default: false
-    t.string "role"
+    t.integer "role", default: 0
     t.json "tokens"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
