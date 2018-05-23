@@ -29,7 +29,7 @@ class V1::OrganizationsController < ApplicationController
   def create
     @organization = Organization.new organization_params
 
-    authorize @organization
+    # authorize @organization
 
     if @organization.save
       render json: @organization
