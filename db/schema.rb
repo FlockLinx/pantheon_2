@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_04_30_233923) do
+ActiveRecord::Schema.define(version: 2018_05_23_194437) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -30,6 +30,8 @@ ActiveRecord::Schema.define(version: 2018_04_30_233923) do
     t.string "organization_tags", default: [], array: true
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "created_by_user_id"
+    t.integer "owner_id"
   end
 
   create_table "posts", force: :cascade do |t|
@@ -51,6 +53,11 @@ ActiveRecord::Schema.define(version: 2018_04_30_233923) do
     t.integer "organization_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.boolean "active", default: true
+    t.integer "created_by_user_id"
+    t.integer "quantity_available"
+    t.integer "quantity_total"
+    t.text "description"
   end
 
   create_table "users", force: :cascade do |t|
@@ -76,7 +83,7 @@ ActiveRecord::Schema.define(version: 2018_04_30_233923) do
     t.string "secondary_email"
     t.integer "created_by_user_id"
     t.boolean "active", default: false
-    t.string "role"
+    t.integer "role", default: 0
     t.json "tokens"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
