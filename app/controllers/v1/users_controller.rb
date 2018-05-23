@@ -6,6 +6,13 @@ class V1::UsersController < ApplicationController
     @users = User.all
   end
 
+  def search
+    if params[:name].present?
+      @user = current_user.search_by_name params[:name]
+      render json: @user
+    end
+  end
+
   def new
     @user = User.new
   end
