@@ -4,13 +4,13 @@ class V1::RewardsController < ApplicationController
   #   short 'Reward'
   # end
 
-  before_action :set_reward, only: [:show, :update]
-  # before_action :authenticate_user!
+  before_action :set_reward, only: [:show, :update, :destroy]
+  before_action :authenticate_user!
 
-  # api :GET, '/reward', 'Mostra instituicoes'
+  # api :GET, '/rewards', 'Mostra as recompensas da organization'
   def index
-    @reward = Reward.all
-    render json: @reward
+    @rewards = Reward.from_organization current_user
+    render json: @rewards
   end
 
   # api :GET, '/reward/:id', 'Mostra instituicao individualmente'
@@ -22,9 +22,9 @@ class V1::RewardsController < ApplicationController
 
   # api :PUT, '/reward/:id', 'Atualiza uma instituicao de saude'
   def update
-    authorize @reward
+    # authorize @reward
 
-    if @reward.save
+    if @reward.update reward_params
       render json: @reward
     else
       render json: @reward.errors.full_messages, status: :unprocessable_entity
@@ -35,7 +35,7 @@ class V1::RewardsController < ApplicationController
   def create
     @reward = Reward.new reward_params
 
-    authorize @reward
+    # authorize @reward
 
     if @reward.save
       render json: @reward
@@ -44,18 +44,28 @@ class V1::RewardsController < ApplicationController
     end
   end
 
+  def destroy
+    @reward.destroy
+  end
+
   private
 
   def set_reward
     @reward = Reward.find(params[:id])
   end
 
-  def reward_params
+  def reward_raw_params
     params.require(:reward).permit(
       :name,
       :cost,
-      :displaed_cost,
-      :ordanization_id
+      :quantity_total,
+      :quantity_available,
+      :description
     )
   end
+
+  def reward_params
+    reward_raw_params.merge!(organization_id: current_user.organization_id,
+                             created_by_user_id: current_user.id)
+   end
 end

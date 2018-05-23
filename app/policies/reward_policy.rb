@@ -7,7 +7,7 @@ class RewardPolicy
   end
 
   def show?
-    @user == record
+    @user.organization.id == record.organization_id
   end
 
   def create?

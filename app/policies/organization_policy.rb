@@ -1,4 +1,4 @@
-class RewardPolicy
+class OrganizationPolicy
   attr_reader :user, :record
 
   def initialize(user, record)
@@ -7,14 +7,14 @@ class RewardPolicy
   end
 
   def show?
-    @user == record
+    update?
   end
 
   def create?
-    true
+    @user
   end
 
   def update?
-    @user == @record
+    @user.org_admin? && @user.organization == @record
   end
 end

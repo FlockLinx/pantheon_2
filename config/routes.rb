@@ -3,11 +3,14 @@ Rails.application.routes.draw do
 
   namespace :v1 do
 
-    resources :users
+    resources :users do
+      get 'search', on: :collection
+    end
     resources :posts
     resources :rewards
     resources :organizations
     resources :employments
+    resources :contacts
   end
 
 end

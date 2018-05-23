@@ -5,7 +5,7 @@ class V1::OrganizationsController < ApplicationController
   # end
 
   before_action :set_organization, only: [:show, :update]
-  # before_action :authenticate_user!
+  before_action :authenticate_user!
 
   # api :GET, '/organization/:id', 'Mostra instituicao organization'
   def show
@@ -25,11 +25,11 @@ class V1::OrganizationsController < ApplicationController
     end
   end
 
-  # api :POST, '/organization', 'Cria uma nova organization
+  # api :POST, '/organizations', 'Cria uma nova empresa'
   def create
     @organization = Organization.new organization_params
 
-    authorize @organization
+    # authorize @organization
 
     if @organization.save
       render json: @organization
@@ -44,10 +44,16 @@ class V1::OrganizationsController < ApplicationController
     @organization = Organization.find(params[:id])
   end
 
-  def organization_params
+  def organization_raw_params
     params.require(:organization).permit(
       :trading_name,
       organization_tags: []
     )
+  end
+
+  def organization_params
+    organization_raw_params.merge!(owner_id: current_user.id,
+                                   created_by_user_id: current_user.id
+                                  )
   end
 end
