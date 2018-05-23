@@ -8,6 +8,7 @@ Rails.application.routes.draw do
     resources :rewards
     resources :organizations
     resources :employments
+    resources :contacts
   end
 
 end
