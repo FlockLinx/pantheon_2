@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_05_23_211734) do
+ActiveRecord::Schema.define(version: 2018_05_24_180753) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -44,6 +44,7 @@ ActiveRecord::Schema.define(version: 2018_05_23_211734) do
     t.datetime "updated_at", null: false
     t.integer "created_by_user_id"
     t.integer "owner_id"
+    t.integer "stars_by_month"
   end
 
   create_table "posts", force: :cascade do |t|
@@ -70,6 +71,15 @@ ActiveRecord::Schema.define(version: 2018_05_23_211734) do
     t.integer "quantity_available"
     t.integer "quantity_total"
     t.text "description"
+  end
+
+  create_table "star_bags", force: :cascade do |t|
+    t.integer "user_id"
+    t.integer "organization_id"
+    t.integer "star_amount", default: 0
+    t.integer "available_stars"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "users", force: :cascade do |t|

@@ -47,6 +47,7 @@ class V1::OrganizationsController < ApplicationController
   def organization_raw_params
     params.require(:organization).permit(
       :trading_name,
+      :stars_by_month,
       organization_tags: []
     )
   end
