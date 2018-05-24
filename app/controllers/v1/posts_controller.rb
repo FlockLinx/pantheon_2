@@ -36,8 +36,10 @@ class V1::PostsController < ApplicationController
     @post = Post.new post_params
 
     # authorize @post
+    if @post.valid? && @post.star_exchanges
 
-    if @post.save
+      @post.beneficiary_star
+      @post.save
       render json: @post
     else
       render json: @post.errors.full_messages, status: :unprocessable_entity
