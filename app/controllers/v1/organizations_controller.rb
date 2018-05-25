@@ -7,14 +7,14 @@ class V1::OrganizationsController < ApplicationController
   before_action :set_organization, only: [:show, :update]
   before_action :authenticate_user!
 
-  # api :GET, '/organization/:id', 'Mostra instituicao organization'
+  # api :GET, '/organization/:id', 'Mostra a organizacao do usuario logado'
   def show
     authorize @organization
 
     render json: @organization
   end
 
-  # api :PUT, '/organization/:id', 'Atualiza uma organization'
+  # api :PUT, '/organization/:id', 'Atualiza uma organization exclusivo para owner'
   def update
     authorize @organization
 
@@ -25,7 +25,7 @@ class V1::OrganizationsController < ApplicationController
     end
   end
 
-  # api :POST, '/organizations', 'Cria uma nova empresa'
+  # api :POST, '/organizations', 'Cria uma nova organizacao'
   def create
     @organization = Organization.new organization_params
 
@@ -47,7 +47,23 @@ class V1::OrganizationsController < ApplicationController
   def organization_raw_params
     params.require(:organization).permit(
       :trading_name,
-      organization_tags: []
+      organization_tags: [],
+      address_attributes: [
+        :id,
+        :uf,
+        :street,
+        :number,
+        :zipcode,
+        :complement,
+        :city,
+        :neighborhood,
+        :_destroy
+      ],
+      phones_attributes: [
+        :id,
+        :number,
+        :_destroy
+      ]
     )
   end
 

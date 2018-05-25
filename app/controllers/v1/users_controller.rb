@@ -58,7 +58,12 @@ class V1::UsersController < ApplicationController
       :password_confirmation,
       :created_by_user_id,
       :active,
-      :uid
+      :uid,
+      phones_attributes: [
+        :id,
+        :number,
+        :_destroy
+      ]
     )
   end
 

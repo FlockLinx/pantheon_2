@@ -33,7 +33,8 @@ class V1::PostsController < ApplicationController
 
   # api :POST, '/post', 'Cria um novo post
   def create
-    @post = Post.new post_params
+    @post = Post.new post_params.merge!(donator_id: current_user.id,
+                                        organization_id: current_user.organization_id)
 
     # authorize @post
 
@@ -52,13 +53,11 @@ class V1::PostsController < ApplicationController
 
   def post_params
     params.require(:post).permit(
-      :donator_id,
       :beneficiary_id,
       :cause,
       :star_amount,
       :amount,
-      :tags,
-      :organization_id
+      :tags
     )
   end
 end

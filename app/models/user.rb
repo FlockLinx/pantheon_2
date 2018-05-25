@@ -6,7 +6,10 @@ class User < ApplicationRecord
 
   has_one :employment
   has_one :organization, through: :employment
+  has_many :phones, dependent: :destroy, as: :phoneable, inverse_of: :phoneable
   enum role: { dummy: 0, org_admin: 1 }
+  accepts_nested_attributes_for :phones, allow_destroy: true
+
 
   include DeviseTokenAuth::Concerns::User
 
