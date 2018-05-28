@@ -13,6 +13,11 @@ class V1::RewardsController < ApplicationController
     render json: @rewards
   end
 
+  def my_rewards
+    @acquired_rewards = current_user.acquire_rewards
+    render json: @acquired_rewards
+  end
+
   # api :GET, '/reward/:id', 'Mostra instituicao individualmente'
   def show
     authorize @reward

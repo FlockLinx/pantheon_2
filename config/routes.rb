@@ -7,10 +7,13 @@ Rails.application.routes.draw do
       get 'search', on: :collection
     end
     resources :posts
-    resources :rewards
+    resources :rewards do
+      get 'my_rewards', on: :collection
+    end
     resources :organizations
     resources :employments
     resources :contacts
+    resources :acquire_rewards
   end
 
 end
