@@ -5,6 +5,7 @@ class User < ApplicationRecord
           :omniauthable
 
   has_one :employment
+  has_one :star_bag
   has_one :organization, through: :employment
   has_many :phones, dependent: :destroy, as: :phoneable, inverse_of: :phoneable
   enum role: { dummy: 0, org_admin: 1 }

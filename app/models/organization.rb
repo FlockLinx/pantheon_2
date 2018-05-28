@@ -9,7 +9,8 @@ class Organization < ApplicationRecord
   has_one :address, dependent: :destroy, as: :addressable,
                                          inverse_of: :addressable
 
-  validates :owner_id, :created_by_user_id, :trading_name, presence: true
+  validates :owner_id, :created_by_user_id,
+            :trading_name, :stars_by_month, presence: true
 
   after_create :update_owner_user_role
 
