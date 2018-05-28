@@ -8,7 +8,7 @@ class V1::AcquireRewardsController < ApplicationController
     if @acquire.save && @acquire.buying_reward
       render json: @acquire, status: 201
     else
-      @acquire.errors.add(:base, "lalalalala") unless @acquire.buying_reward
+      @acquire.errors.add(:base, "Nao possui estrelas suficientes") unless @acquire.buying_reward
       render json: @acquire.errors.full_messages, status: :unprocessable_entity
     end
   end
