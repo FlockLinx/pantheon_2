@@ -9,7 +9,7 @@ class V1::PostsController < ApplicationController
 
   # api :GET, '/posts', 'Feed da organization'
   def index
-    @post = Post.post_list(current_user).page params[:page]
+    @post = Post.list(current_user).page params[:page]
     render json: @post
   end
 

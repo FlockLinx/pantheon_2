@@ -10,7 +10,7 @@ class Post < ApplicationRecord
   belongs_to :beneficiary, :class_name => "User", :foreign_key => "beneficiary_id"
   belongs_to :organization
 
-  scope :post_list, -> (user)  { where(organization_id: user.organization.id)}
+  scope :list, -> (user)  { where(organization_id: user.organization.id)}
 
   def star_exchanges
     donator_starbag = StarBag.find_by(user_id: donator_id)
