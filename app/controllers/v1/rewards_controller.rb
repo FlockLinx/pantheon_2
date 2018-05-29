@@ -9,7 +9,7 @@ class V1::RewardsController < ApplicationController
 
   # api :GET, '/rewards', 'Mostra as recompensas da organization'
   def index
-    @rewards = Reward.from_organization current_user
+    @rewards = Reward.from_organization(current_user).page params[:page]
     render json: @rewards
   end
 
