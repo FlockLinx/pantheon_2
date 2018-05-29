@@ -33,11 +33,14 @@ class V1::PostsController < ApplicationController
 
   # api :POST, '/post', 'Cria um novo post
   def create
-    @post = Post.new post_params
+    @post = Post.new post_params.merge!(donator_id: current_user.id,
+                                        organization_id: current_user.organization_id)
 
     # authorize @post
+    if @post.valid? && @post.star_exchanges
 
-    if @post.save
+      @post.beneficiary_star
+      @post.save
       render json: @post
     else
       render json: @post.errors.full_messages, status: :unprocessable_entity
@@ -52,13 +55,11 @@ class V1::PostsController < ApplicationController
 
   def post_params
     params.require(:post).permit(
-      :donator_id,
       :beneficiary_id,
       :cause,
       :star_amount,
       :amount,
-      :tags,
-      :organization_id
+      :tags
     )
   end
 end

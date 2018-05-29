@@ -1,6 +1,7 @@
 class V1::UsersController < ApplicationController
-  before_action :set_user, only: [:show, :edit, :update, :destroy]
+  before_action :set_user, only: [:show, :update, :destroy]
   before_action :delete_password_from_params, only: :update
+  before_action :authenticate_user!, except: [:create]
 
   def index
     @users = User.all
@@ -18,11 +19,7 @@ class V1::UsersController < ApplicationController
   end
 
   def show
-    # authorize @user
-  end
-
-  def edit
-    # authorize @user
+    authorize @user
   end
 
   def create
@@ -36,6 +33,8 @@ class V1::UsersController < ApplicationController
   end
 
   def update
+    authorize @user
+
     if @user.update user_params
       render json: @user
     else
@@ -54,11 +53,17 @@ class V1::UsersController < ApplicationController
     params.require(:user).permit(
       :name,
       :email,
+      :secondary_email,
       :password,
       :password_confirmation,
       :created_by_user_id,
       :active,
-      :uid
+      :uid,
+      phones_attributes: [
+        :id,
+        :number,
+        :_destroy
+      ]
     )
   end
 

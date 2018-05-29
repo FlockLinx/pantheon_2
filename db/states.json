@@ -1,0 +1,135 @@
+[{
+    "name": "Acre",
+	"acronym": "AC",
+  "region": "Norte"
+ },
+{
+    "name": "Alagoas",
+	"acronym": "AL",
+  "region": "Nordeste"
+	},
+{
+    "name": "Amazonas",
+	"acronym": "AM",
+  "region": "Norte"
+	},
+{
+	"name": "Amapá",
+	"acronym": "AP",
+  "region": "Norte"
+	},
+{
+    "name": "Bahia",
+	"acronym": "BA",
+  "region": "Nordeste"
+	},
+{
+    "name": "Ceará",
+	"acronym": "CE",
+  "region": "Nordeste"
+	},
+{
+    "name": "Distrito Federal",
+	"acronym": "DF",
+  "region": "Centro-Oeste"
+	},
+{
+    "name": "Espírito Santo",
+	"acronym": "ES",
+  "region": "Sudeste"
+	},
+{
+    "name": "Goiás",
+	"acronym": "GO",
+  "region": "Centro-Oeste"
+	},
+{
+    "name": "Maranhão",
+	"acronym": "MA",
+  "region": "Nordeste"
+	},
+{
+    "name": "Minas Gerais",
+	"acronym": "MG",
+  "region": "Sudeste"
+	},
+{
+    "name": "Mato Grosso do Sul",
+	"acronym": "MS",
+  "region": "Centro-Oeste"
+	},
+{
+    "name": "Mato Grosso",
+	"acronym": "MT",
+  "region": "Centro-Oeste"
+	},
+{
+    "name": "Pará",
+	"acronym": "PA",
+  "region": "Norte"
+	},
+{
+    "name": "Paraíba",
+	"acronym": "PB",
+  "region": "Nordeste"
+	},
+{
+    "name": "Pernambuco",
+	"acronym": "PE",
+  "region": "Nordeste"
+	},
+{
+    "name": "Piauí",
+	"acronym": "PI",
+  "region": "Nordeste"
+	},
+{
+    "name": "Paraná",
+	"acronym": "PR",
+  "region": "Sul"
+	},
+{
+    "name": "Rio de Janeiro",
+	"acronym": "RJ",
+  "region": "Sudeste"
+	},
+{
+    "name": "Rio Grande do Norte",
+	"acronym": "RN",
+  "region": "Nordeste"
+	},
+{
+    "name": "Rondônia",
+	"acronym": "RO",
+  "region": "Norte"
+	},
+{
+    "name": "Roraima",
+	"acronym": "RR",
+  "region": "Norte"
+	},
+{
+    "name": "Rio Grande do Sul",
+	"acronym": "RS",
+  "region": "Sul"
+	},
+{
+    "name": "Santa Catarina",
+	"acronym": "SC",
+  "region": "Sul"
+	},
+{
+    "name": "Sergipe",
+	"acronym": "SE",
+  "region": "Nordeste"
+	},
+{
+    "name": "São Paulo",
+	"acronym": "SP",
+  "region": "Sudeste"
+	},
+{
+    "name": "Tocantins",
+	"acronym": "TO",
+  "region": "Norte"
+	}]

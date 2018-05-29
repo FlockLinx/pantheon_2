@@ -10,10 +10,25 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_05_23_211734) do
+ActiveRecord::Schema.define(version: 2018_05_25_183842) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "addresses", force: :cascade do |t|
+    t.integer "addressable_id"
+    t.integer "state_id"
+    t.string "addressable_type"
+    t.string "street"
+    t.string "complement"
+    t.string "number"
+    t.string "zipcode"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.string "city"
+    t.boolean "main_address", default: false
+    t.string "neighborhood"
+  end
 
   create_table "contacts", force: :cascade do |t|
     t.string "name"
@@ -44,6 +59,15 @@ ActiveRecord::Schema.define(version: 2018_05_23_211734) do
     t.datetime "updated_at", null: false
     t.integer "created_by_user_id"
     t.integer "owner_id"
+    t.integer "stars_by_month"
+  end
+
+  create_table "phones", force: :cascade do |t|
+    t.string "number"
+    t.string "phoneable_type"
+    t.integer "phoneable_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "posts", force: :cascade do |t|
@@ -70,6 +94,23 @@ ActiveRecord::Schema.define(version: 2018_05_23_211734) do
     t.integer "quantity_available"
     t.integer "quantity_total"
     t.text "description"
+  end
+
+  create_table "star_bags", force: :cascade do |t|
+    t.integer "user_id"
+    t.integer "organization_id"
+    t.integer "star_amount", default: 0
+    t.integer "available_stars"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "states", force: :cascade do |t|
+    t.string "name"
+    t.string "acronym"
+    t.string "region"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "users", force: :cascade do |t|
