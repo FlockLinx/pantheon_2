@@ -27,7 +27,7 @@ class V1::RewardsController < ApplicationController
 
   # api :PUT, '/reward/:id', 'Atualiza uma instituicao de saude'
   def update
-    # authorize @reward
+    authorize @reward
 
     if @reward.update reward_params
       render json: @reward

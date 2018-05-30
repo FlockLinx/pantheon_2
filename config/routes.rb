@@ -6,11 +6,13 @@ Rails.application.routes.draw do
     resources :users do
       get 'search', on: :collection
     end
-    resources :posts
     resources :rewards do
       get 'my_rewards', on: :collection
     end
-    resources :organizations
+    resources :organizations do
+      get 'employees_list', on: :collection
+    end
+    resources :posts
     resources :employments
     resources :contacts
     resources :acquire_rewards

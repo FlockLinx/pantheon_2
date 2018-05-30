@@ -9,12 +9,17 @@ class Organization < ApplicationRecord
   has_one :address, dependent: :destroy, as: :addressable,
                                          inverse_of: :addressable
 
-  validates :owner_id, :created_by_user_id,
+  validates :owner_id,
             :trading_name, :stars_by_month, presence: true
 
   after_create :update_owner_user_role
 
   accepts_nested_attributes_for :phones, :address, allow_destroy: true
+
+
+  def employees
+    employments.map{ |u| u.user }
+  end
 
   private
 

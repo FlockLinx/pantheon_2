@@ -7,6 +7,16 @@ class V1::OrganizationsController < ApplicationController
   before_action :set_organization, only: [:show, :update]
   before_action :authenticate_user!
 
+  # api :GET, '/organizations/employees_list', 'Mostra os funcionarios cadastrados da organizacao do usuario logado'
+  def employees_list
+    @organization = current_user.organization
+
+    authorize @organization
+
+    render json: @organization.employees
+  end
+
+
   # api :GET, '/organization/:id', 'Mostra a organizacao do usuario logado'
   def show
     authorize @organization
