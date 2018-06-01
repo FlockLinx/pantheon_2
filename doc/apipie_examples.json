@@ -1,0 +1,167 @@
+{
+  "contacts#create": [
+    {
+      "verb": "POST",
+      "path": "/v1/contacts",
+      "versions": [
+        "v1"
+      ],
+      "query": null,
+      "request_data": {
+        "contact": {
+          "email": "hattie@beahan.name",
+          "message": "Roo ru ooma huewaa muaa ruh ooma yrroonn!",
+          "name": "Ben Solo",
+          "origin": "Dathomir",
+          "phone": "107-105-9285",
+          "subject": "I have a bad feeling about..."
+        }
+      },
+      "response_data": {
+        "id": 1,
+        "name": "Ben Solo",
+        "email": "hattie@beahan.name",
+        "phone": "107-105-9285",
+        "subject": "I have a bad feeling about...",
+        "origin": "Dathomir",
+        "message": "Roo ru ooma huewaa muaa ruh ooma yrroonn!",
+        "created_by_user_id": null,
+        "created_at": "2018-06-01T14:40:05.301Z",
+        "updated_at": "2018-06-01T14:40:05.301Z"
+      },
+      "code": "201",
+      "show_in_doc": 1,
+      "recorded": true
+    },
+    {
+      "verb": "POST",
+      "path": "/v1/contacts",
+      "versions": [
+        "v1"
+      ],
+      "query": null,
+      "request_data": {
+        "contact": {
+          "name": "Lyra Erso",
+          "origin": "Kashyyyk",
+          "phone": "1-799-244-3381",
+          "subject": "I have a really bad feeling about this."
+        }
+      },
+      "response_data": [
+        "Email can't be blank",
+        "Message can't be blank"
+      ],
+      "code": "422",
+      "show_in_doc": 0,
+      "recorded": true
+    }
+  ],
+  "organizations#create": [
+    {
+      "verb": "POST",
+      "path": "/v1/organizations",
+      "versions": [
+        "1.0"
+      ],
+      "query": null,
+      "request_data": {
+        "organization": {
+          "stars_by_month": "20",
+          "trading_name": "Wiza, Batz and Ankunding"
+        }
+      },
+      "response_data": {
+        "id": 1,
+        "trading_name": "Wiza, Batz and Ankunding",
+        "organization_tags": [
+
+        ],
+        "created_at": "2018-06-01T14:40:05.588Z",
+        "updated_at": "2018-06-01T14:40:05.588Z",
+        "created_by_user_id": 1,
+        "owner_id": 1,
+        "stars_by_month": 20
+      },
+      "code": "200",
+      "show_in_doc": 1,
+      "recorded": true
+    },
+    {
+      "verb": "POST",
+      "path": "/v1/organizations",
+      "versions": [
+        "1.0"
+      ],
+      "query": null,
+      "request_data": {
+        "organization": {
+          "trading_name": "Blanda, Mann and MacGyver"
+        }
+      },
+      "response_data": [
+        "Stars by month can't be blank"
+      ],
+      "code": "422",
+      "show_in_doc": 0,
+      "recorded": true
+    }
+  ],
+  "users#create": [
+    {
+      "verb": "POST",
+      "path": "/v1/users",
+      "versions": [
+        "1.0"
+      ],
+      "query": null,
+      "request_data": {
+        "user": {
+          "email": "lyda@carrollbailey.biz",
+          "name": "Anakin Skywalker",
+          "password": "Wannacry",
+          "password_confirmation": "Wannacry"
+        }
+      },
+      "response_data": {
+        "id": 3,
+        "provider": "email",
+        "uid": "lyda@carrollbailey.biz",
+        "allow_password_change": false,
+        "name": "Anakin Skywalker",
+        "image": null,
+        "email": "lyda@carrollbailey.biz",
+        "secondary_email": null,
+        "created_by_user_id": null,
+        "active": false,
+        "role": "dummy",
+        "created_at": "2018-06-01T14:40:05.869Z",
+        "updated_at": "2018-06-01T14:40:05.869Z"
+      },
+      "code": "201",
+      "show_in_doc": 1,
+      "recorded": true
+    },
+    {
+      "verb": "POST",
+      "path": "/v1/users",
+      "versions": [
+        "1.0"
+      ],
+      "query": null,
+      "request_data": {
+        "user": {
+          "name": "Lyra Erso",
+          "password": "Wannacry",
+          "password_confirmation": "Wannacry"
+        }
+      },
+      "response_data": [
+        "Email can't be blank"
+      ],
+      "code": "422",
+      "show_in_doc": 0,
+      "recorded": true
+    }
+  ]
+}
