@@ -19,6 +19,8 @@
 /tmp
 /log/*.log
 Gemfile.lock
+/coverage/
+
 
 
 .byebug_history

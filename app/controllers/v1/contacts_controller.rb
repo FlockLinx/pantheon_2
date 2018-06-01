@@ -9,7 +9,7 @@ class V1::ContactsController < ApplicationController
   param :contact, Hash, required: true do
     param :name, String, required: true
     param :email, String, required: true
-    param :phone, String, required: true
+    param :phone, String, required: false
     param :subject, String, required: false
     param :origin, String, required: false
     param :message, String, required: true

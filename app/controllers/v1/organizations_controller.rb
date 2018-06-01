@@ -37,7 +37,6 @@ class V1::OrganizationsController < ApplicationController
 
   api :POST, '/organizations', 'Cria uma nova organizacao'
   def create
-    byebug
     @organization = Organization.new organization_params
 
     # authorize @organization
@@ -58,6 +57,7 @@ class V1::OrganizationsController < ApplicationController
   def organization_raw_params
     params.require(:organization).permit(
       :trading_name,
+      :stars_by_month,
       organization_tags: [],
       address_attributes: [
         :id,
