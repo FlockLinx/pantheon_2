@@ -1,12 +1,19 @@
 class V1::UsersController < ApplicationController
+  resource_description do
+    # param_group :global_controllers,  DocumentationHelper
+    short 'Users'
+  end
+
   before_action :set_user, only: [:show, :update, :destroy]
   before_action :delete_password_from_params, only: :update
   before_action :authenticate_user!, except: [:create]
+
 
   def index
     @users = User.all
   end
 
+  api :GET, '/users/search', 'Procura um usuario pelo nome'
   def search
     if params[:name].present?
       @user = current_user.search_by_name params[:name]
@@ -18,10 +25,12 @@ class V1::UsersController < ApplicationController
     @user = User.new
   end
 
+  api :GET, '/users/:id', 'Mostra o perfil do usuario logado'
   def show
     authorize @user
   end
 
+  api :POST, '/users', 'Cria um usuario'
   def create
     @user = User.new(user_params)
 
@@ -32,6 +41,7 @@ class V1::UsersController < ApplicationController
     end
   end
 
+  api :PUT, '/users/:id', 'Atualiza um usuario'
   def update
     authorize @user
 

@@ -1,8 +1,8 @@
 Rails.application.routes.draw do
+  apipie
   mount_devise_token_auth_for 'User', at: 'auth'
 
   namespace :v1 do
-
     resources :users do
       get 'search', on: :collection
     end

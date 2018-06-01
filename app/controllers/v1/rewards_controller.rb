@@ -1,13 +1,13 @@
 class V1::RewardsController < ApplicationController
-  # resource_description do
-  #   param_group :global_controllers,  DocumentationHelper
-  #   short 'Reward'
-  # end
+  resource_description do
+    # param_group :global_controllers,  DocumentationHelper
+    short 'Reward'
+  end
 
   before_action :set_reward, only: [:show, :update, :destroy]
   before_action :authenticate_user!
 
-  # api :GET, '/rewards', 'Mostra as recompensas da organization'
+  api :GET, '/rewards', 'Mostra as recompensas da empresa'
   def index
     @rewards = Reward.from_organization(current_user).page params[:page]
     render json: @rewards
@@ -18,14 +18,14 @@ class V1::RewardsController < ApplicationController
     render json: @acquired_rewards
   end
 
-  # api :GET, '/reward/:id', 'Mostra instituicao individualmente'
+  api :GET, '/reward/:id', 'Mostra a recompensa individualmente'
   def show
     authorize @reward
 
     render json: @reward
   end
 
-  # api :PUT, '/reward/:id', 'Atualiza uma instituicao de saude'
+  api :PUT, '/reward/:id', 'Atualiza uma recompensa'
   def update
     authorize @reward
 
@@ -36,7 +36,7 @@ class V1::RewardsController < ApplicationController
     end
   end
 
-  # api :POST, '/reward', 'Cria uma nova instituicao de saude com seu CNPJ
+  api :POST, '/reward', 'Cria uma nova recompensa'
   def create
     @reward = Reward.new reward_params
 
@@ -49,6 +49,7 @@ class V1::RewardsController < ApplicationController
     end
   end
 
+  api :DELETE, '/reward/:id', 'Remove uma recompensa'
   def destroy
     @reward.destroy
   end

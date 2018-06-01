@@ -1,7 +1,12 @@
 class V1::AcquireRewardsController < ApplicationController
+  resource_description do
+  # param_group :global_controllers,  DocumentationHelper
+  short 'Adquire uma recompensa - Cria'
+  end
 
   before_action :authenticate_user!
 
+  api :POST, '/acquire_rewards', 'Adquire uma recompensa'
   def create
     @acquire = AcquireReward.new acquire_reward_params.merge!(user_id: current_user.id)
 

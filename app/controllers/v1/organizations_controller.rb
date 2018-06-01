@@ -1,13 +1,13 @@
 class V1::OrganizationsController < ApplicationController
-  # resource_description do
-  #   param_group :global_controllers,  DocumentationHelper
-  #   short 'Organization'
-  # end
+  resource_description do
+    # param_group :global_controllers,  DocumentationHelper
+    short 'Organization'
+  end
 
   before_action :set_organization, only: [:show, :update]
   before_action :authenticate_user!
 
-  # api :GET, '/organizations/employees_list', 'Mostra os funcionarios cadastrados da organizacao do usuario logado'
+  api :GET, '/organizations/employees_list', 'Mostra os funcionarios cadastrados da organizacao do usuario logado'
   def employees_list
     @organization = current_user.organization
 
@@ -17,14 +17,14 @@ class V1::OrganizationsController < ApplicationController
   end
 
 
-  # api :GET, '/organization/:id', 'Mostra a organizacao do usuario logado'
+  api :GET, '/organization/:id', 'Mostra a organizacao do usuario logado'
   def show
     authorize @organization
 
     render json: @organization
   end
 
-  # api :PUT, '/organization/:id', 'Atualiza uma organization exclusivo para owner'
+  api :PUT, '/organization/:id', 'Atualiza uma organization exclusivo para owner'
   def update
     authorize @organization
 
@@ -35,8 +35,9 @@ class V1::OrganizationsController < ApplicationController
     end
   end
 
-  # api :POST, '/organizations', 'Cria uma nova organizacao'
+  api :POST, '/organizations', 'Cria uma nova organizacao'
   def create
+    byebug
     @organization = Organization.new organization_params
 
     # authorize @organization
