@@ -10,7 +10,7 @@ class V1::AcquireRewardsController < ApplicationController
   def create
     @acquire = AcquireReward.new acquire_reward_params.merge!(user_id: current_user.id)
 
-    if @acquire.save && @acquire.buying_reward
+    if @acquire.buying_reward && @acquire.save
       render json: @acquire, status: 201
     else
       @acquire.errors.add(:base, "Nao possui estrelas suficientes") unless @acquire.buying_reward

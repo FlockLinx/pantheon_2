@@ -15,8 +15,8 @@ class Organization < ApplicationRecord
   after_create :update_owner_user_role
 
   accepts_nested_attributes_for :phones, :address, allow_destroy: true
-
-
+  after_save :reload
+  
   def employees
     employments.map{ |u| u.user }
   end

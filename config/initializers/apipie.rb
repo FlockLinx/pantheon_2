@@ -8,7 +8,7 @@ Apipie.configure do |config|
   config.default_locale = nil
 
   config.app_info ="
-  == Descricao Sollis API
+  == Descricao API
   TODOS os endpoints disponiveis DEVEM ser acessados por um usuario valido
   e autenticado, para efetuar login se deve seguir o seguinte passo a passo.:
 
@@ -17,7 +17,7 @@ Apipie.configure do |config|
   2 - Passar como parametro um json contendo os parametros email e password
 
   Exemplo.:
-  { 'email': 'dr_medico@sollisinovacao.com.br', 'password': 'meu_password_secreto' }
+  { 'email': 'usuario@email.com.br', 'password': 'meu_password_secreto' }
 
   3 - Se o usuario for autenticado, a api retorna codigo 200 e alguns headers
   os que devem ser utilizados são.:

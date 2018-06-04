@@ -1,4 +1,48 @@
 {
+  "acquire_rewards#create": [
+    {
+      "verb": "POST",
+      "path": "/v1/acquire_rewards",
+      "versions": [
+        "1.0"
+      ],
+      "query": null,
+      "request_data": {
+        "acquire_reward": {
+          "reward_id": "1"
+        }
+      },
+      "response_data": {
+        "id": 1,
+        "user_id": 1,
+        "reward_id": 1,
+        "created_at": "2018-06-04T13:51:15.057Z",
+        "updated_at": "2018-06-04T13:51:15.057Z"
+      },
+      "code": "201",
+      "show_in_doc": 1,
+      "recorded": true
+    },
+    {
+      "verb": "POST",
+      "path": "/v1/acquire_rewards",
+      "versions": [
+        "1.0"
+      ],
+      "query": null,
+      "request_data": {
+        "acquire_reward": {
+          "reward_id": "2"
+        }
+      },
+      "response_data": [
+        "Nao possui estrelas suficientes"
+      ],
+      "code": "422",
+      "show_in_doc": 0,
+      "recorded": true
+    }
+  ],
   "contacts#create": [
     {
       "verb": "POST",
@@ -9,25 +53,25 @@
       "query": null,
       "request_data": {
         "contact": {
-          "email": "hattie@beahan.name",
-          "message": "Roo ru ooma huewaa muaa ruh ooma yrroonn!",
-          "name": "Ben Solo",
-          "origin": "Dathomir",
-          "phone": "107-105-9285",
-          "subject": "I have a bad feeling about..."
+          "email": "mustafa_rowe@brownstroman.io",
+          "message": "Nng rarr yrroonn yrroonn gwyaaaag gwyaaaag.",
+          "name": "General Hux",
+          "origin": "Dagobah",
+          "phone": "1-648-676-0197",
+          "subject": "You're smarter than a tree, aren't you?"
         }
       },
       "response_data": {
         "id": 1,
-        "name": "Ben Solo",
-        "email": "hattie@beahan.name",
-        "phone": "107-105-9285",
-        "subject": "I have a bad feeling about...",
-        "origin": "Dathomir",
-        "message": "Roo ru ooma huewaa muaa ruh ooma yrroonn!",
+        "name": "General Hux",
+        "email": "mustafa_rowe@brownstroman.io",
+        "phone": "1-648-676-0197",
+        "subject": "You're smarter than a tree, aren't you?",
+        "origin": "Dagobah",
+        "message": "Nng rarr yrroonn yrroonn gwyaaaag gwyaaaag.",
         "created_by_user_id": null,
-        "created_at": "2018-06-01T14:40:05.301Z",
-        "updated_at": "2018-06-01T14:40:05.301Z"
+        "created_at": "2018-06-04T13:51:15.385Z",
+        "updated_at": "2018-06-04T13:51:15.385Z"
       },
       "code": "201",
       "show_in_doc": 1,
@@ -42,15 +86,62 @@
       "query": null,
       "request_data": {
         "contact": {
-          "name": "Lyra Erso",
-          "origin": "Kashyyyk",
-          "phone": "1-799-244-3381",
-          "subject": "I have a really bad feeling about this."
+          "name": "Captain Phasma",
+          "origin": "Jakku",
+          "phone": "146.092.0286",
+          "subject": "I assume you need something. Desperately."
         }
       },
       "response_data": [
         "Email can't be blank",
         "Message can't be blank"
+      ],
+      "code": "422",
+      "show_in_doc": 0,
+      "recorded": true
+    }
+  ],
+  "employments#create": [
+    {
+      "verb": "POST",
+      "path": "/v1/employments",
+      "versions": [
+        "1.0"
+      ],
+      "query": null,
+      "request_data": {
+        "employment": {
+          "organization_id": "3",
+          "user_id": "4"
+        }
+      },
+      "response_data": {
+        "id": 4,
+        "user_id": 4,
+        "organization_id": 3,
+        "created_at": "2018-06-04T13:51:15.714Z",
+        "updated_at": "2018-06-04T13:51:15.714Z",
+        "active_job": true
+      },
+      "code": "200",
+      "show_in_doc": 1,
+      "recorded": true
+    },
+    {
+      "verb": "POST",
+      "path": "/v1/employments",
+      "versions": [
+        "1.0"
+      ],
+      "query": null,
+      "request_data": {
+        "employment": {
+          "organization_id": "4"
+        }
+      },
+      "response_data": [
+        "User can't be blank",
+        "User must exist"
       ],
       "code": "422",
       "show_in_doc": 0,
@@ -68,19 +159,19 @@
       "request_data": {
         "organization": {
           "stars_by_month": "20",
-          "trading_name": "Wiza, Batz and Ankunding"
+          "trading_name": "Kuvalis, Baumbach and Wilkinson"
         }
       },
       "response_data": {
-        "id": 1,
-        "trading_name": "Wiza, Batz and Ankunding",
+        "id": 6,
+        "trading_name": "Kuvalis, Baumbach and Wilkinson",
         "organization_tags": [
 
         ],
-        "created_at": "2018-06-01T14:40:05.588Z",
-        "updated_at": "2018-06-01T14:40:05.588Z",
-        "created_by_user_id": 1,
-        "owner_id": 1,
+        "created_at": "2018-06-04T13:51:16.219Z",
+        "updated_at": "2018-06-04T13:51:16.219Z",
+        "created_by_user_id": 7,
+        "owner_id": 7,
         "stars_by_month": 20
       },
       "code": "200",
@@ -96,11 +187,257 @@
       "query": null,
       "request_data": {
         "organization": {
-          "trading_name": "Blanda, Mann and MacGyver"
+          "trading_name": "Schaefer Inc"
         }
       },
       "response_data": [
         "Stars by month can't be blank"
+      ],
+      "code": "422",
+      "show_in_doc": 0,
+      "recorded": true
+    }
+  ],
+  "organizations#employees_list": [
+    {
+      "verb": "GET",
+      "path": "/v1/organizations/employees_list",
+      "versions": [
+        "1.0"
+      ],
+      "query": "",
+      "request_data": null,
+      "response_data": [
+        {
+          "id": 27,
+          "provider": "email",
+          "uid": "marjolaine@cainlittle.name",
+          "allow_password_change": false,
+          "name": "Quinn Shanahan III",
+          "image": null,
+          "email": "marjolaine@cainlittle.name",
+          "secondary_email": null,
+          "created_by_user_id": null,
+          "active": true,
+          "role": "org_admin",
+          "created_at": "2018-06-04T13:51:17.829Z",
+          "updated_at": "2018-06-04T13:51:18.034Z"
+        },
+        {
+          "id": 25,
+          "provider": "email",
+          "uid": "paxton.kling@macgyver.org",
+          "allow_password_change": false,
+          "name": "Sigurd Mann",
+          "image": null,
+          "email": "paxton.kling@macgyver.org",
+          "secondary_email": null,
+          "created_by_user_id": null,
+          "active": true,
+          "role": "dummy",
+          "created_at": "2018-06-04T13:51:17.812Z",
+          "updated_at": "2018-06-04T13:51:17.945Z"
+        }
+      ],
+      "code": "200",
+      "show_in_doc": 1,
+      "recorded": true
+    },
+    {
+      "verb": "GET",
+      "path": "/v1/organizations/employees_list",
+      "versions": [
+        "1.0"
+      ],
+      "query": "",
+      "request_data": null,
+      "response_data": {
+        "message": "translation missing: en.pundit.organization_policy.employees_list?"
+      },
+      "code": "403",
+      "show_in_doc": 0,
+      "recorded": true
+    }
+  ],
+  "organizations#show": [
+    {
+      "verb": "GET",
+      "path": "/v1/organizations/10",
+      "versions": [
+        "1.0"
+      ],
+      "query": "",
+      "request_data": null,
+      "response_data": {
+        "id": 10,
+        "trading_name": "Shany Frami",
+        "organization_tags": [
+
+        ],
+        "created_at": "2018-06-04T13:51:17.193Z",
+        "updated_at": "2018-06-04T13:51:17.193Z",
+        "created_by_user_id": null,
+        "owner_id": 21,
+        "stars_by_month": 20
+      },
+      "code": "200",
+      "show_in_doc": 1,
+      "recorded": true
+    },
+    {
+      "verb": "GET",
+      "path": "/v1/organizations/11",
+      "versions": [
+        "1.0"
+      ],
+      "query": "",
+      "request_data": null,
+      "response_data": {
+        "message": "translation missing: en.pundit.organization_policy.show?"
+      },
+      "code": "403",
+      "show_in_doc": 0,
+      "recorded": true
+    }
+  ],
+  "organizations#update": [
+    {
+      "verb": "PUT",
+      "path": "/v1/organizations/8",
+      "versions": [
+        "1.0"
+      ],
+      "query": null,
+      "request_data": {
+        "organization": {
+          "trading_name": "My Company"
+        }
+      },
+      "response_data": {
+        "id": 8,
+        "trading_name": "My Company",
+        "organization_tags": [
+
+        ],
+        "created_at": "2018-06-04T13:51:16.529Z",
+        "updated_at": "2018-06-04T13:51:16.837Z",
+        "created_by_user_id": null,
+        "owner_id": 15,
+        "stars_by_month": 20
+      },
+      "code": "200",
+      "show_in_doc": 1,
+      "recorded": true
+    },
+    {
+      "verb": "PUT",
+      "path": "/v1/organizations/9",
+      "versions": [
+        "1.0"
+      ],
+      "query": null,
+      "request_data": {
+        "trading_name": "My Company"
+      },
+      "response_data": {
+        "message": "translation missing: en.pundit.organization_policy.update?"
+      },
+      "code": "403",
+      "show_in_doc": 0,
+      "recorded": true
+    }
+  ],
+  "posts#create": [
+    {
+      "verb": "POST",
+      "path": "/v1/posts",
+      "versions": [
+        "1.0"
+      ],
+      "query": null,
+      "request_data": {
+        "post": {
+          "beneficiary_id": "31",
+          "cause": "Remember your focus determines your reality.",
+          "star_amount": "10"
+        }
+      },
+      "response_data": {
+        "id": 1,
+        "donator_id": 32,
+        "beneficiary_id": 31,
+        "cause": "Remember your focus determines your reality.",
+        "star_amount": "10",
+        "amount": null,
+        "organization_id": 14,
+        "tags": [
+
+        ],
+        "created_at": "2018-06-04T13:51:18.747Z",
+        "updated_at": "2018-06-04T13:51:18.747Z"
+      },
+      "code": "200",
+      "show_in_doc": 1,
+      "recorded": true
+    },
+    {
+      "verb": "POST",
+      "path": "/v1/posts",
+      "versions": [
+        "1.0"
+      ],
+      "query": null,
+      "request_data": {
+        "post": {
+          "beneficiary_id": "35",
+          "cause": "Twice the pride, double the fall.",
+          "star_amount": "30"
+        }
+      },
+      "response_data": [
+
+      ],
+      "code": "422",
+      "show_in_doc": 0,
+      "recorded": true
+    },
+    {
+      "verb": "POST",
+      "path": "/v1/posts",
+      "versions": [
+        "1.0"
+      ],
+      "query": null,
+      "request_data": {
+        "post": {
+          "beneficiary_id": "40",
+          "cause": "Ee mara tom tee tok maky cheesa. (You should have paid him when you had the chance.)",
+          "star_amount": "30"
+        }
+      },
+      "response_data": [
+        "nao pode ser a mesma pessoa"
+      ],
+      "code": "422",
+      "show_in_doc": 0,
+      "recorded": true
+    },
+    {
+      "verb": "POST",
+      "path": "/v1/posts",
+      "versions": [
+        "1.0"
+      ],
+      "query": null,
+      "request_data": {
+        "post": {
+          "beneficiary_id": "43",
+          "cause": "You can't stop change any more than you can stop the suns from setting.",
+          "star_amount": "30"
+        }
+      },
+      "response_data": [
+        "precisa ser da mesma instituicao"
       ],
       "code": "422",
       "show_in_doc": 0,
@@ -117,26 +454,26 @@
       "query": null,
       "request_data": {
         "user": {
-          "email": "lyda@carrollbailey.biz",
-          "name": "Anakin Skywalker",
+          "email": "cesar@rempelanderson.com",
+          "name": "Darth Vader",
           "password": "Wannacry",
           "password_confirmation": "Wannacry"
         }
       },
       "response_data": {
-        "id": 3,
+        "id": 47,
         "provider": "email",
-        "uid": "lyda@carrollbailey.biz",
+        "uid": "cesar@rempelanderson.com",
         "allow_password_change": false,
-        "name": "Anakin Skywalker",
+        "name": "Darth Vader",
         "image": null,
-        "email": "lyda@carrollbailey.biz",
+        "email": "cesar@rempelanderson.com",
         "secondary_email": null,
         "created_by_user_id": null,
         "active": false,
         "role": "dummy",
-        "created_at": "2018-06-01T14:40:05.869Z",
-        "updated_at": "2018-06-01T14:40:05.869Z"
+        "created_at": "2018-06-04T13:51:19.645Z",
+        "updated_at": "2018-06-04T13:51:19.645Z"
       },
       "code": "201",
       "show_in_doc": 1,
@@ -151,7 +488,7 @@
       "query": null,
       "request_data": {
         "user": {
-          "name": "Lyra Erso",
+          "name": "Jyn Erso",
           "password": "Wannacry",
           "password_confirmation": "Wannacry"
         }

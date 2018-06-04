@@ -10,6 +10,9 @@ class V1::PostsController < ApplicationController
   api :GET, '/posts', 'Feed de postagens da empresa'
   def index
     @post = Post.list(current_user).page params[:page]
+
+    authorize @post
+
     render json: @post
   end
 
@@ -36,7 +39,7 @@ class V1::PostsController < ApplicationController
     @post = Post.new post_params.merge!(donator_id: current_user.id,
                                         organization_id: current_user.organization_id)
 
-    # authorize @post
+    authorize @post
     if @post.valid? && @post.star_exchanges
 
       @post.beneficiary_star
