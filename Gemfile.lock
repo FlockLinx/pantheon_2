@@ -36,6 +36,11 @@ GEM
       erubi (~> 1.4)
       rails-dom-testing (~> 2.0)
       rails-html-sanitizer (~> 1.0, >= 1.0.3)
+    active_model_serializers (0.10.7)
+      actionpack (>= 4.1, < 6)
+      activemodel (>= 4.1, < 6)
+      case_transform (>= 0.2)
+      jsonapi-renderer (>= 0.1.1.beta1, < 0.3)
     activejob (5.2.0)
       activesupport (= 5.2.0)
       globalid (>= 0.3.6)
@@ -68,6 +73,8 @@ GEM
       msgpack (~> 1.0)
     builder (3.2.3)
     byebug (10.0.2)
+    case_transform (0.2)
+      activesupport
     celluloid (0.17.3)
       celluloid-essentials
       celluloid-extras
@@ -120,6 +127,7 @@ GEM
       concurrent-ruby (~> 1.0)
     ice_cube (0.14.0)
     json (2.1.0)
+    jsonapi-renderer (0.2.0)
     kaminari (1.1.1)
       activesupport (>= 4.1.0)
       kaminari-actionview (= 1.1.1)
@@ -285,6 +293,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  active_model_serializers (~> 0.10.0)
   apipie-rails
   awesome_print
   better_errors

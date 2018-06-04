@@ -7,7 +7,7 @@ class PostPolicy
   end
 
   def index?
-    update?
+    true
   end
 
   def show?
@@ -19,6 +19,6 @@ class PostPolicy
   end
 
   def update?
-    @user.organization.id == @record.organization_id
+    @user.organization.id == @record.organization_id && @user.employment.active_job?
   end
 end

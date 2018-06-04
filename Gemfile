@@ -24,6 +24,7 @@ gem 'puma', '~> 3.11'
 
 # Serialization
 gem 'fast_jsonapi'
+gem 'active_model_serializers', '~> 0.10.0'
 
 # Paginate
 gem 'kaminari'

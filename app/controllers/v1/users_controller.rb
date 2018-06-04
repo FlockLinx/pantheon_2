@@ -4,13 +4,14 @@ class V1::UsersController < ApplicationController
     short 'Users'
   end
 
-  before_action :set_user, only: [:show, :update, :destroy]
+  before_action :set_user, only: [:update, :destroy]
   before_action :delete_password_from_params, only: :update
   before_action :authenticate_user!, except: [:create]
 
-
+  api :GET, '/users', 'Mostra o perfil do usuario logado'
   def index
-    @users = User.all
+    @user = current_user
+    render json: @user
   end
 
   api :GET, '/users/search', 'Procura um usuario pelo nome'

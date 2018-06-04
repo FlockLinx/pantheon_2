@@ -10,12 +10,12 @@ class V1::RewardsController < ApplicationController
   api :GET, '/rewards', 'Mostra as recompensas da empresa'
   def index
     @rewards = Reward.from_organization(current_user).page params[:page]
-    render json: @rewards
+    render json: @rewards, each_serializer: RewardSerializer
   end
 
   def my_rewards
     @acquired_rewards = current_user.acquire_rewards
-    render json: @acquired_rewards
+    render json: @acquired_rewards, each_serializer: AcquireRewardSerializer
   end
 
   api :GET, '/reward/:id', 'Mostra a recompensa individualmente'

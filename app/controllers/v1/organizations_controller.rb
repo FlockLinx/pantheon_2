@@ -13,7 +13,7 @@ class V1::OrganizationsController < ApplicationController
 
     authorize @organization
 
-    render json: @organization.employees
+    render json: @organization.employees, each_serializer: EmploymentSerializer
   end
 
 
