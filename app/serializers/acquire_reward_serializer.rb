@@ -1,12 +1,19 @@
 class AcquireRewardSerializer < ActiveModel::Serializer
-  attributes :acquired_rewards
+  attributes :name, :cost, :description, :acquired_at
 
-  def acquired_rewards
-    {
-      acquired_at: object.created_at.strftime('%d/%m/%Y'),
-      name: object.reward.name,
-      cost: object.reward.cost,
-      description: object.reward.description
-    }
+  def acquired_at
+    object.created_at.strftime('%d/%m/%Y')
+  end
+
+  def name
+    object.reward.name
+  end
+
+  def cost
+    object.reward.cost
+  end
+
+  def description
+    object.reward.description
   end
 end
