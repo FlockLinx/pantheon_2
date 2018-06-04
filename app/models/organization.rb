@@ -4,6 +4,7 @@ class Organization < ApplicationRecord
 
   has_many :rewards
   has_many :employments
+  has_many :posts
   has_many :users, through: :employments
   has_many :phones, dependent: :destroy, as: :phoneable, inverse_of: :phoneable
   has_one :address, dependent: :destroy, as: :addressable,
@@ -16,9 +17,14 @@ class Organization < ApplicationRecord
 
   accepts_nested_attributes_for :phones, :address, allow_destroy: true
   after_save :reload
-  
+
   def employees
     employments.map{ |u| u.user }
+  end
+
+  def star_ranking
+    array = self.posts.pluck(:beneficiary_id, :amount)
+    array.group_by { | id, b | id }.map{ | id, x | [id, x.sum {| _, b | b }]}.to_h
   end
 
   private

@@ -30,7 +30,7 @@ RSpec.describe V1::PostsController, type: :controller do
         	post: {
              beneficiary_id: organization.owner.id,
              cause: Faker::StarWars.quote,
-             star_amount: 10
+             amount: 10
         	}
         }
         expect{
@@ -45,7 +45,7 @@ RSpec.describe V1::PostsController, type: :controller do
           post: {
              beneficiary_id: organization.owner.id,
              cause: Faker::StarWars.quote,
-             star_amount: 30
+             amount: 30
           }
         }
         expect{
@@ -59,7 +59,7 @@ RSpec.describe V1::PostsController, type: :controller do
           post: {
              beneficiary_id: user.id,
              cause: Faker::StarWars.quote,
-             star_amount: 30
+             amount: 30
           }
         }
         expect{
@@ -81,7 +81,7 @@ RSpec.describe V1::PostsController, type: :controller do
           post: {
              beneficiary_id: organization.owner.id,
              cause: Faker::StarWars.quote,
-             star_amount: 30
+             amount: 30
           }
         }
         expect{

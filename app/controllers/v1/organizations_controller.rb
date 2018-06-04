@@ -16,6 +16,17 @@ class V1::OrganizationsController < ApplicationController
     render json: @organization.employees, each_serializer: EmploymentSerializer
   end
 
+  api :GET, '/organizations/star_ranking', 'Mostra os funcionarios que mais receberam estrelas'
+  def star_ranking
+    @organization = current_user.organization
+
+    # authorize @organization
+
+    render json: @organization.star_ranking, serializer: StarRankingSerializer
+  end
+
+
+
 
   api :GET, '/organizations/:id', 'Mostra a organizacao do usuario logado'
   def show
