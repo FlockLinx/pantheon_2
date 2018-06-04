@@ -50,6 +50,9 @@ gem 'rubocop', require: false
 gem 'rack-cors'
 gem 'rack-attack'
 
+# API DOC
+gem 'apipie-rails'
+
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '>= 1.1.0', require: false
 

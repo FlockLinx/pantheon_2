@@ -1,7 +1,12 @@
 class V1::EmploymentsController < ApplicationController
+  resource_description do
+  # param_group :global_controllers,  DocumentationHelper
+  short 'Vinculo Empregaticio - Cria, Remove'
+  end
 
   before_action :authenticate_user!
 
+  api :POST, '/employments', 'Cria um vinculo Empregaticio'
   def create
     @job = Employment.new employment_params
 

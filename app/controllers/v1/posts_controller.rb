@@ -1,19 +1,22 @@
 class V1::PostsController < ApplicationController
-  # resource_description do
-  #   param_group :global_controllers,  DocumentationHelper
-  #   short 'Post'
-  # end
+  resource_description do
+    # param_group :global_controllers,  DocumentationHelper
+    short 'Post'
+  end
 
   before_action :set_post, only: [:show, :update]
   before_action :authenticate_user!
 
-  # api :GET, '/posts', 'Feed da organization'
+  api :GET, '/posts', 'Feed de postagens da empresa'
   def index
     @post = Post.list(current_user).page params[:page]
+
+    authorize @post
+
     render json: @post
   end
 
-  # api :GET, '/post/:id', 'Mostra o post'
+  api :GET, '/post/:id', 'Mostra o post'
   def show
     authorize @post
 
@@ -31,12 +34,12 @@ class V1::PostsController < ApplicationController
     end
   end
 
-  # api :POST, '/post', 'Cria um novo post
+  api :POST, '/post', 'Cria um novo post'
   def create
     @post = Post.new post_params.merge!(donator_id: current_user.id,
                                         organization_id: current_user.organization_id)
 
-    # authorize @post
+    authorize @post
     if @post.valid? && @post.star_exchanges
 
       @post.beneficiary_star
