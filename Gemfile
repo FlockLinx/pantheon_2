@@ -23,7 +23,6 @@ gem 'puma', '~> 3.11'
 # gem 'capistrano-rails', group: :development
 
 # Serialization
-gem 'fast_jsonapi'
 gem 'active_model_serializers', '~> 0.10.0'
 
 # Paginate
@@ -42,7 +41,9 @@ gem 'health_check'
 # Background jobs
 gem 'sinatra', git: "https://github.com/sinatra/sinatra"
 gem 'sidekiq'
-gem 'sidetiq'
+
+# CRON jobs
+gem 'sidecloq'
 
 # Code Style and Best Pratices
 gem 'rubocop', require: false
