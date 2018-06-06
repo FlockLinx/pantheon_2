@@ -23,7 +23,6 @@ gem 'puma', '~> 3.11'
 # gem 'capistrano-rails', group: :development
 
 # Serialization
-gem 'fast_jsonapi'
 gem 'active_model_serializers', '~> 0.10.0'
 
 # Paginate

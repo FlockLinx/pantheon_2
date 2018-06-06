@@ -1,0 +1,24 @@
+'en':
+  activerecord:
+    models:
+      post: Post
+      attributes:
+    errors:
+      models:
+        post:
+          attributes:
+            base:
+              invalid: "Must be work together"
+              must_be_different: "Can't be the same person"
+'pt-BR':
+  activerecord:
+    models:
+      post: Post
+      attributes:
+    errors:
+      models:
+        post:
+          attributes:
+            base:
+              invalid: "Deve pertencer a mesma instituição"
+              must_be_different: "Não pode ser a mesma pessoa"

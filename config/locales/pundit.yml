@@ -1,0 +1,12 @@
+pt-BR:
+  pundit:
+    default: 'Você não possui autorização para executar essa ação.'
+    post_policy:
+      create?: 'Não foi possivel realizar essa ação.
+               Por favor verifique se os dados estão corretos'
+    organization_policy:
+      create?: 'Não foi possivel realizar essa ação.
+               Por favor verifique se os dados estão corretos'
+    acquire_reward_policy:
+      create?: 'Não foi possivel realizar essa ação.
+               Por favor verifique se os dados estão corretos'
