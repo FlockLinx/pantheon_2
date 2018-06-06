@@ -21,6 +21,11 @@ class Organization < ApplicationRecord
     employments.map(&:user)
   end
 
+  def star_ranking
+    array = self.posts.pluck(:beneficiary_id, :amount)
+    array.group_by { | id, b | id }.map{ | id, x | [id, x.sum {| _, b | b }]}.to_h
+  end
+
   private
 
   def update_owner_user_role

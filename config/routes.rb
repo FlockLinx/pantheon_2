@@ -15,6 +15,7 @@ Rails.application.routes.draw do
     end
     resources :organizations do
       get 'employees_list', on: :collection
+      get 'star_ranking', on: :collection
     end
     resources :posts
     resources :employments
