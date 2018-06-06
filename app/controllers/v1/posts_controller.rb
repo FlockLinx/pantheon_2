@@ -61,7 +61,7 @@ class V1::PostsController < ApplicationController
       :beneficiary_id,
       :cause,
       :amount,
-      :tags
+      tags: []
     )
   end
 end
