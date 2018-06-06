@@ -19,7 +19,7 @@ class AcquireReward < ApplicationRecord
   private
 
   def same_organization
-    errors.add(:base, "Precisa ser da mesma instituicao") unless reward.organization_id == user.organization_id
+    errors.add(:base, "Precisa ser da mesma instituicao") unless reward.organization_id == user.organization.id
   end
 
   def active_reward

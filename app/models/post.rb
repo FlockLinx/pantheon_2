@@ -31,7 +31,7 @@ class Post < ApplicationRecord
   private
 
   def same_organization
-    errors.add(:base, "precisa ser da mesma instituicao") unless beneficiary&.organization_id == donator&.organization_id
+    errors.add(:base, "precisa ser da mesma instituicao") unless beneficiary&.organization.id == donator&.organization.id
   end
 
   def must_be_different
