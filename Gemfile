@@ -41,7 +41,9 @@ gem 'health_check'
 # Background jobs
 gem 'sinatra', git: "https://github.com/sinatra/sinatra"
 gem 'sidekiq'
-gem 'sidetiq'
+
+# CRON jobs
+gem 'sidecloq'
 
 # Code Style and Best Pratices
 gem 'rubocop', require: false

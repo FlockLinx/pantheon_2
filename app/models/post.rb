@@ -1,7 +1,7 @@
 class Post < ApplicationRecord
   validates :organization, :donator_id,
             :beneficiary_id, :cause,
-            :star_amount, presence: true
+            :amount, presence: true
 
   validate :same_organization
   validate :must_be_different
@@ -14,7 +14,7 @@ class Post < ApplicationRecord
 
   def star_exchanges
     donator_starbag = StarBag.find_by(user_id: donator_id)
-    donator_starbag.available_stars -= star_amount.to_i
+    donator_starbag.available_stars -= amount
     donator_starbag.update(user_id: donator_id,
                            available_stars: donator_starbag.available_stars
                           )
@@ -22,7 +22,7 @@ class Post < ApplicationRecord
 
   def beneficiary_star
     beneficiary_starbag = StarBag.find_by(user_id: beneficiary_id)
-    beneficiary_starbag.star_amount += star_amount.to_i
+    beneficiary_starbag.star_amount += amount
     beneficiary_starbag.update(user_id: beneficiary_id,
                                star_amount: beneficiary_starbag.star_amount
                               )

@@ -60,9 +60,8 @@ class V1::PostsController < ApplicationController
     params.require(:post).permit(
       :beneficiary_id,
       :cause,
-      :star_amount,
       :amount,
-      :tags
+      tags: []
     )
   end
 end

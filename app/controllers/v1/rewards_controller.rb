@@ -71,7 +71,7 @@ class V1::RewardsController < ApplicationController
   end
 
   def reward_params
-    reward_raw_params.merge!(organization_id: current_user.organization_id,
+    reward_raw_params.merge!(organization_id: current_user.organization.id,
                              created_by_user_id: current_user.id)
    end
 end

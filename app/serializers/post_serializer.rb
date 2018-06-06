@@ -1,6 +1,6 @@
 class PostSerializer < ActiveModel::Serializer
 
-  attributes :id, :donator, :beneficiary, :star_amount, :cause
+  attributes :id, :donator, :beneficiary, :star_amount, :cause, :tags
 
   def donator
     object.donator.name

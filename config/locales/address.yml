@@ -1,0 +1,47 @@
+'en':
+  activerecord:
+    models:
+      acquire_reward: Acquire Reward
+      attributes:
+        addresses:
+        state: State
+        street: Street
+        complement: Complement
+        number: Number
+        zipcode: ZipCode
+        city: City
+        address_kind: Address Kind
+        main_address: Main Address
+        neighborhood: Neighborhood
+    errors:
+      models:
+        acquire_reward:
+          attributes:
+
+'pt-BR':
+  activerecord:
+    models:
+      address: Endereço
+      attributes:
+        addresses:
+        state: Estado
+        street: Rua
+        complement: Complemento
+        number: Numero
+        zipcode: CEP
+        city: Cidade
+        address_kind: Tipo de endereço
+        main_address: Endereço principal
+        neighborhood: Bairro
+    errors:
+      models:
+        acquire_reward:
+          attributes:
+            state:
+              required: deve ser preenchido
+            street:
+              required: deve ser preenchida
+            zipcode:
+              required: deve ser preenchido
+            city:
+              required: deve ser preenchida

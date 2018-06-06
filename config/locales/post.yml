@@ -8,17 +8,23 @@
         post:
           attributes:
             base:
-              invalid: "Must be work together"
-              must_be_different: "Can't be the same person"
+              invalid: Must be work together
+              must_be_different: Can't be the same person
 'pt-BR':
   activerecord:
     models:
       post: Post
       attributes:
+        donator_id: Doador
+        beneficiary_id: Beneficiario
+        cause: Motivo
+        amount: Quantidade de estrelas
+        organization_id: Organização
     errors:
       models:
         post:
           attributes:
             base:
-              invalid: "Deve pertencer a mesma instituição"
-              must_be_different: "Não pode ser a mesma pessoa"
+              required: deve ser preenchido
+              invalid: Deve pertencer a mesma instituição
+              must_be_different: Não pode ser a mesma pessoa
