@@ -37,7 +37,7 @@ class V1::PostsController < ApplicationController
   api :POST, '/post', 'Cria um novo post'
   def create
     @post = Post.new post_params.merge!(donator_id: current_user.id,
-                                        organization_id: current_user.organization_id)
+                                        organization_id: current_user.organization.id)
 
     authorize @post
     if @post.valid? && @post.star_exchanges
@@ -62,7 +62,7 @@ class V1::PostsController < ApplicationController
       :cause,
       :star_amount,
       :amount,
-      :tags
+      tags: []
     )
   end
 end

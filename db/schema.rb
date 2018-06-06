@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_05_28_220627) do
+ActiveRecord::Schema.define(version: 2018_06_06_091846) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -61,12 +61,12 @@ ActiveRecord::Schema.define(version: 2018_05_28_220627) do
 
   create_table "organizations", force: :cascade do |t|
     t.string "trading_name"
-    t.string "organization_tags", default: [], array: true
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.integer "created_by_user_id"
     t.integer "owner_id"
     t.integer "stars_by_month"
+    t.text "organization_tags", default: [], array: true
   end
 
   create_table "phones", force: :cascade do |t|
@@ -84,7 +84,7 @@ ActiveRecord::Schema.define(version: 2018_05_28_220627) do
     t.string "star_amount"
     t.integer "amount"
     t.integer "organization_id"
-    t.string "tags", default: [], array: true
+    t.text "tags", default: [], array: true
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
