@@ -16,7 +16,7 @@ pt-BR:
       unconfirmed: "Você precisa confirmar sua conta, antes de continuar."
     mailer:
       confirmation_instructions:
-        subject: "Instruções de confirmação"
+        subject: "Bem-vinda(o) a Pantheon!!!"
       reset_password_instructions:
         subject: "Instruções para redefinir sua senha"
       unlock_instructions:

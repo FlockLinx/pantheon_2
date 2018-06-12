@@ -6,11 +6,11 @@ class Post < ApplicationRecord
   validate :same_organization
   validate :must_be_different
 
-  belongs_to :donator, :class_name => "User", :foreign_key => "donator_id"
-  belongs_to :beneficiary, :class_name => "User", :foreign_key => "beneficiary_id"
+  belongs_to :donator, class_name: 'User', foreign_key: 'donator_id'
+  belongs_to :beneficiary, class_name: 'User', foreign_key: 'beneficiary_id'
   belongs_to :organization
 
-  scope :list, -> (user)  { where(organization_id: user.organization.id)}
+  scope :list, -> (user)  { where(organization_id: user.organization.id, active: true)}
 
   def star_exchanges
     donator_starbag = StarBag.find_by(user_id: donator_id)

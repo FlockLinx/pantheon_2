@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta content='text/html; charset=UTF-8' http-equiv='Content-Type' />
+  </head>
+  <body>
+    <p>Origem: <%= @contact&.origin %></p>
+    <p>Nome: <%= @contact.name %></p>
+    <p>Email: <%= @contact.email %></p>
+    <p>Telefone: <%= @contact.phone %></p>
+    <p>Assunto: <%= @contact.subject %></p>
+    <p>Mensagem: <%= @contact.message %></p>
+    <p>Criado por: <%= @contact&.created_by_user_id %></p>
+  </body>
+</html>
