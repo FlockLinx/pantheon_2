@@ -1,0 +1,32 @@
+'pt-BR':
+  helpers:
+    submit:
+      create: "Salvar %{model}"
+      update: "Atualizar %{model}"
+  date:
+    formats:
+      default: "%d/%m/%Y"
+      short: "%d %b"
+      with_time: "%d/%m/%Y %H:%M"
+      weekday: "%A"
+      no_year: "%d/%m"
+      no_day: "%b %Y"
+      extent: "%d %B %Y"
+  time:
+    formats:
+      default: "%d/%m/%Y"
+      short: "%d %b"
+      with_time: "%d/%m/%Y %H:%M"
+      with_seconds: "%d/%m/%Y %H:%M:%S"
+      text: "%d de %B de %Y"
+      no_day: "%b %Y"
+  messages:
+  success: Sucesso
+  create: Criado
+  update: Atualizado
+  destroy: Removido
+  uninformed: Não informado
+  active: Ativo
+  deactivated: Desativado
+  per: por
+  every: A cada

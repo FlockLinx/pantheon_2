@@ -1,28 +1,33 @@
 class V1::RewardsController < ApplicationController
-  # resource_description do
-  #   param_group :global_controllers,  DocumentationHelper
-  #   short 'Reward'
-  # end
+  resource_description do
+    # param_group :global_controllers,  DocumentationHelper
+    short 'Reward'
+  end
 
   before_action :set_reward, only: [:show, :update, :destroy]
   before_action :authenticate_user!
 
-  # api :GET, '/rewards', 'Mostra as recompensas da organization'
+  api :GET, '/rewards', 'Mostra as recompensas da empresa'
   def index
-    @rewards = Reward.from_organization current_user
-    render json: @rewards
+    @rewards = Reward.from_organization(current_user).page params[:page]
+    render json: @rewards, each_serializer: RewardSerializer
   end
 
-  # api :GET, '/reward/:id', 'Mostra instituicao individualmente'
+  def my_rewards
+    @acquired_rewards = current_user.acquire_rewards
+    render json: @acquired_rewards, each_serializer: AcquireRewardSerializer
+  end
+
+  api :GET, '/reward/:id', 'Mostra a recompensa individualmente'
   def show
     authorize @reward
 
     render json: @reward
   end
 
-  # api :PUT, '/reward/:id', 'Atualiza uma instituicao de saude'
+  api :PUT, '/reward/:id', 'Atualiza uma recompensa'
   def update
-    # authorize @reward
+    authorize @reward
 
     if @reward.update reward_params
       render json: @reward
@@ -31,7 +36,7 @@ class V1::RewardsController < ApplicationController
     end
   end
 
-  # api :POST, '/reward', 'Cria uma nova instituicao de saude com seu CNPJ
+  api :POST, '/reward', 'Cria uma nova recompensa'
   def create
     @reward = Reward.new reward_params
 
@@ -44,6 +49,7 @@ class V1::RewardsController < ApplicationController
     end
   end
 
+  api :DELETE, '/reward/:id', 'Remove uma recompensa'
   def destroy
     @reward.destroy
   end
@@ -65,7 +71,7 @@ class V1::RewardsController < ApplicationController
   end
 
   def reward_params
-    reward_raw_params.merge!(organization_id: current_user.organization_id,
+    reward_raw_params.merge!(organization_id: current_user.organization.id,
                              created_by_user_id: current_user.id)
    end
 end

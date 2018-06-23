@@ -6,6 +6,10 @@ class OrganizationPolicy
     @record = record
   end
 
+  def employees_list?
+    update?
+  end
+
   def show?
     update?
   end

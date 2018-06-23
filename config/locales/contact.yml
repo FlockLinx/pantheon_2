@@ -1,0 +1,26 @@
+'en':
+  activerecord:
+    models:
+      contact: Contact Us
+      attributes:
+    errors:
+      models:
+        acquire_reward:
+          attributes:
+
+'pt-BR':
+  activerecord:
+    models:
+      contact: Contact Us
+      attributes:
+        name: Nome
+        email: Email
+        phone: Telefone
+        subject: Assunto
+        origin: Origem
+        message: Mensagem
+    errors:
+      models:
+        contact:
+          attributes:
+            required: deve ser preenchido

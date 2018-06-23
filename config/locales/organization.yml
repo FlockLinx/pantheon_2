@@ -1,0 +1,22 @@
+'en':
+  activerecord:
+    models:
+      organization: Organization
+      attributes:
+    errors:
+      models:
+        acquire_reward:
+          attributes:
+
+'pt-BR':
+  activerecord:
+    models:
+      organization: Organização
+      attributes:
+        trading_name: Nome
+        stars_by_month: Quantidade de estrelas por mês
+    errors:
+      models:
+        contact:
+          attributes:
+            required: deve ser preenchido

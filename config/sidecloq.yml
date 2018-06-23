@@ -1,0 +1,26 @@
+production:
+  # these will only run in production
+  my_scheduled_job:
+    class: AvailableStarsResetWorker
+    cron: "0 0 1 * *"
+    queue: "default"
+
+staging:
+  # this will only run in staging
+  my_other_scheduled_job:
+    class: AvailableStarsResetWorker
+    cron: "0 0 1 * *"
+    queue: "default"
+
+
+development:
+  # this will only run in development
+  my_development_scheduled_job:
+    class: AvailableStarsResetWorker
+    cron: "0 0 1 * *"
+    queue: "default"
+
+  my_development_scheduled_job:
+    class: ResetWarningWorker
+    cron: "0 26 * * *"
+    queue: "default"

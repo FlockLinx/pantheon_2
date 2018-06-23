@@ -1,0 +1,26 @@
+'en':
+  activerecord:
+    models:
+      user: User
+      attributes:
+    errors:
+      models:
+        user:
+          attributes:
+            base:
+
+'pt-BR':
+  activerecord:
+    models:
+      user: Usuario
+      attributes:
+        name: Nome
+        email: Email
+        secondary_email: Email secundario
+
+    errors:
+      models:
+        user:
+          attributes:
+            base:
+              required: deve ser preenchido

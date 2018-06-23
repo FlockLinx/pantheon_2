@@ -15,6 +15,6 @@ class RewardPolicy
   end
 
   def update?
-    @user == @record
+    @user.org_admin? && @user.organization_id == @record.organization_id
   end
 end

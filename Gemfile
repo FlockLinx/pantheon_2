@@ -23,7 +23,7 @@ gem 'puma', '~> 3.11'
 # gem 'capistrano-rails', group: :development
 
 # Serialization
-gem 'fast_jsonapi'
+gem 'active_model_serializers', '~> 0.10.0'
 
 # Paginate
 gem 'kaminari'
@@ -41,7 +41,9 @@ gem 'health_check'
 # Background jobs
 gem 'sinatra', git: "https://github.com/sinatra/sinatra"
 gem 'sidekiq'
-gem 'sidetiq'
+
+# CRON jobs
+gem 'sidecloq'
 
 # Code Style and Best Pratices
 gem 'rubocop', require: false
@@ -49,6 +51,9 @@ gem 'rubocop', require: false
 # CORS
 gem 'rack-cors'
 gem 'rack-attack'
+
+# API DOC
+gem 'apipie-rails'
 
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '>= 1.1.0', require: false

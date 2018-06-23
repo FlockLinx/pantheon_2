@@ -1,0 +1,26 @@
+'en':
+  activerecord:
+    models:
+      star_bag: Sacola de Estrelas
+      attributes:
+    errors:
+      models:
+        star_bag:
+          attributes:
+            base:
+
+'pt-BR':
+  activerecord:
+    models:
+      star_bag: Sacola de Estrelas
+      attributes:
+        user_id: Usuario
+        organization_id: Organização
+        star_amount: Saldo total de estrelas
+        available_stars: Estrelas disponiveis
+    errors:
+      models:
+        star_bag:
+          attributes:
+            base:
+              required: deve ser preenchido
