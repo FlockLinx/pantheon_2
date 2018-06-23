@@ -20,8 +20,7 @@
 /log/*.log
 Gemfile.lock
 /coverage/
-
-
+dump.rdb
 
 .byebug_history
 
