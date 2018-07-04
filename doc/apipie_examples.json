@@ -13,11 +13,10 @@
         }
       },
       "response_data": {
-        "id": 1,
-        "user_id": 1,
-        "reward_id": 1,
-        "created_at": "2018-06-04T13:51:15.057Z",
-        "updated_at": "2018-06-04T13:51:15.057Z"
+        "name": "Some thing special",
+        "cost": 10,
+        "description": "lorem ipsum",
+        "acquired_at": "04/07/2018"
       },
       "code": "201",
       "show_in_doc": 1,
@@ -36,7 +35,7 @@
         }
       },
       "response_data": [
-        "Nao possui estrelas suficientes"
+        "Não possui estrelas suficientes"
       ],
       "code": "422",
       "show_in_doc": 0,
@@ -53,25 +52,25 @@
       "query": null,
       "request_data": {
         "contact": {
-          "email": "mustafa_rowe@brownstroman.io",
-          "message": "Nng rarr yrroonn yrroonn gwyaaaag gwyaaaag.",
-          "name": "General Hux",
-          "origin": "Dagobah",
-          "phone": "1-648-676-0197",
-          "subject": "You're smarter than a tree, aren't you?"
+          "email": "kian@marquardtokeefe.net",
+          "message": "Nng hnn-rowr roooarrgh roo huewaa?",
+          "name": "Sebulba",
+          "origin": "Felucia",
+          "phone": "1-192-522-7504",
+          "subject": "It's not impossible. I used to bullseye womp rats in my T-16 back home, they're not much bigger than two meters."
         }
       },
       "response_data": {
         "id": 1,
-        "name": "General Hux",
-        "email": "mustafa_rowe@brownstroman.io",
-        "phone": "1-648-676-0197",
-        "subject": "You're smarter than a tree, aren't you?",
-        "origin": "Dagobah",
-        "message": "Nng rarr yrroonn yrroonn gwyaaaag gwyaaaag.",
+        "name": "Sebulba",
+        "email": "kian@marquardtokeefe.net",
+        "phone": "1-192-522-7504",
+        "subject": "It's not impossible. I used to bullseye womp rats in my T-16 back home, they're not much bigger than two meters.",
+        "origin": "Felucia",
+        "message": "Nng hnn-rowr roooarrgh roo huewaa?",
         "created_by_user_id": null,
-        "created_at": "2018-06-04T13:51:15.385Z",
-        "updated_at": "2018-06-04T13:51:15.385Z"
+        "created_at": "2018-07-04T15:11:26.229-03:00",
+        "updated_at": "2018-07-04T15:11:26.229-03:00"
       },
       "code": "201",
       "show_in_doc": 1,
@@ -86,15 +85,15 @@
       "query": null,
       "request_data": {
         "contact": {
-          "name": "Captain Phasma",
-          "origin": "Jakku",
-          "phone": "146.092.0286",
-          "subject": "I assume you need something. Desperately."
+          "name": "Bendu",
+          "origin": "Felucia",
+          "phone": "(589) 960-5963",
+          "subject": "You will remove these restraints and leave this cell with the door open."
         }
       },
       "response_data": [
-        "Email can't be blank",
-        "Message can't be blank"
+        "Email translation missing: pt-BR.activerecord.errors.models.contact.attributes.email.blank",
+        "Message translation missing: pt-BR.activerecord.errors.models.contact.attributes.message.blank"
       ],
       "code": "422",
       "show_in_doc": 0,
@@ -116,12 +115,7 @@
         }
       },
       "response_data": {
-        "id": 4,
-        "user_id": 4,
-        "organization_id": 3,
-        "created_at": "2018-06-04T13:51:15.714Z",
-        "updated_at": "2018-06-04T13:51:15.714Z",
-        "active_job": true
+        "created_at": "04/07/2018"
       },
       "code": "200",
       "show_in_doc": 1,
@@ -140,8 +134,8 @@
         }
       },
       "response_data": [
-        "User can't be blank",
-        "User must exist"
+        "User translation missing: pt-BR.activerecord.errors.models.employment.attributes.user_id.blank",
+        "User translation missing: pt-BR.activerecord.errors.models.employment.attributes.user.required"
       ],
       "code": "422",
       "show_in_doc": 0,
@@ -159,20 +153,19 @@
       "request_data": {
         "organization": {
           "stars_by_month": "20",
-          "trading_name": "Kuvalis, Baumbach and Wilkinson"
+          "trading_name": "de Sá Comércio"
         }
       },
       "response_data": {
-        "id": 6,
-        "trading_name": "Kuvalis, Baumbach and Wilkinson",
+        "trading_name": "de Sá Comércio",
+        "stars_by_month": 20,
         "organization_tags": [
 
         ],
-        "created_at": "2018-06-04T13:51:16.219Z",
-        "updated_at": "2018-06-04T13:51:16.219Z",
-        "created_by_user_id": 7,
-        "owner_id": 7,
-        "stars_by_month": 20
+        "phones": [
+
+        ],
+        "address": null
       },
       "code": "200",
       "show_in_doc": 1,
@@ -187,11 +180,11 @@
       "query": null,
       "request_data": {
         "organization": {
-          "trading_name": "Schaefer Inc"
+          "trading_name": "Hernandes-Modesto"
         }
       },
       "response_data": [
-        "Stars by month can't be blank"
+        "Stars by month translation missing: pt-BR.activerecord.errors.models.organization.attributes.stars_by_month.blank"
       ],
       "code": "422",
       "show_in_doc": 0,
@@ -209,34 +202,10 @@
       "request_data": null,
       "response_data": [
         {
-          "id": 27,
-          "provider": "email",
-          "uid": "marjolaine@cainlittle.name",
-          "allow_password_change": false,
-          "name": "Quinn Shanahan III",
-          "image": null,
-          "email": "marjolaine@cainlittle.name",
-          "secondary_email": null,
-          "created_by_user_id": null,
-          "active": true,
-          "role": "org_admin",
-          "created_at": "2018-06-04T13:51:17.829Z",
-          "updated_at": "2018-06-04T13:51:18.034Z"
+          "created_at": "04/07/2018"
         },
         {
-          "id": 25,
-          "provider": "email",
-          "uid": "paxton.kling@macgyver.org",
-          "allow_password_change": false,
-          "name": "Sigurd Mann",
-          "image": null,
-          "email": "paxton.kling@macgyver.org",
-          "secondary_email": null,
-          "created_by_user_id": null,
-          "active": true,
-          "role": "dummy",
-          "created_at": "2018-06-04T13:51:17.812Z",
-          "updated_at": "2018-06-04T13:51:17.945Z"
+          "created_at": "04/07/2018"
         }
       ],
       "code": "200",
@@ -252,7 +221,7 @@
       "query": "",
       "request_data": null,
       "response_data": {
-        "message": "translation missing: en.pundit.organization_policy.employees_list?"
+        "message": "translation missing: pt-BR.pundit.organization_policy.employees_list?"
       },
       "code": "403",
       "show_in_doc": 0,
@@ -269,16 +238,15 @@
       "query": "",
       "request_data": null,
       "response_data": {
-        "id": 10,
-        "trading_name": "Shany Frami",
+        "trading_name": "Yango Carvalheira",
+        "stars_by_month": 20,
         "organization_tags": [
 
         ],
-        "created_at": "2018-06-04T13:51:17.193Z",
-        "updated_at": "2018-06-04T13:51:17.193Z",
-        "created_by_user_id": null,
-        "owner_id": 21,
-        "stars_by_month": 20
+        "phones": [
+
+        ],
+        "address": null
       },
       "code": "200",
       "show_in_doc": 1,
@@ -293,7 +261,7 @@
       "query": "",
       "request_data": null,
       "response_data": {
-        "message": "translation missing: en.pundit.organization_policy.show?"
+        "message": "translation missing: pt-BR.pundit.organization_policy.show?"
       },
       "code": "403",
       "show_in_doc": 0,
@@ -314,16 +282,15 @@
         }
       },
       "response_data": {
-        "id": 8,
         "trading_name": "My Company",
+        "stars_by_month": 20,
         "organization_tags": [
 
         ],
-        "created_at": "2018-06-04T13:51:16.529Z",
-        "updated_at": "2018-06-04T13:51:16.837Z",
-        "created_by_user_id": null,
-        "owner_id": 15,
-        "stars_by_month": 20
+        "phones": [
+
+        ],
+        "address": null
       },
       "code": "200",
       "show_in_doc": 1,
@@ -340,7 +307,7 @@
         "trading_name": "My Company"
       },
       "response_data": {
-        "message": "translation missing: en.pundit.organization_policy.update?"
+        "message": "translation missing: pt-BR.pundit.organization_policy.update?"
       },
       "code": "403",
       "show_in_doc": 0,
@@ -357,24 +324,20 @@
       "query": null,
       "request_data": {
         "post": {
+          "amount": "10",
           "beneficiary_id": "31",
-          "cause": "Remember your focus determines your reality.",
-          "star_amount": "10"
+          "cause": "Talk Jabba. (Tell that to Jabba.)"
         }
       },
       "response_data": {
         "id": 1,
-        "donator_id": 32,
-        "beneficiary_id": 31,
-        "cause": "Remember your focus determines your reality.",
-        "star_amount": "10",
-        "amount": null,
-        "organization_id": 14,
+        "donator": "Mirella Matoso",
+        "beneficiary": "Lavínia Matoso",
+        "star_amount": null,
+        "cause": "Talk Jabba. (Tell that to Jabba.)",
         "tags": [
 
-        ],
-        "created_at": "2018-06-04T13:51:18.747Z",
-        "updated_at": "2018-06-04T13:51:18.747Z"
+        ]
       },
       "code": "200",
       "show_in_doc": 1,
@@ -389,9 +352,9 @@
       "query": null,
       "request_data": {
         "post": {
+          "amount": "30",
           "beneficiary_id": "35",
-          "cause": "Twice the pride, double the fall.",
-          "star_amount": "30"
+          "cause": "How you doin' Chewbacca? Still hanging around with this loser?"
         }
       },
       "response_data": [
@@ -410,13 +373,13 @@
       "query": null,
       "request_data": {
         "post": {
+          "amount": "30",
           "beneficiary_id": "40",
-          "cause": "Ee mara tom tee tok maky cheesa. (You should have paid him when you had the chance.)",
-          "star_amount": "30"
+          "cause": "You can run, but you'll only die tired."
         }
       },
       "response_data": [
-        "nao pode ser a mesma pessoa"
+        "Não pode ser a mesma pessoa"
       ],
       "code": "422",
       "show_in_doc": 0,
@@ -431,15 +394,178 @@
       "query": null,
       "request_data": {
         "post": {
+          "amount": "30",
           "beneficiary_id": "43",
-          "cause": "You can't stop change any more than you can stop the suns from setting.",
-          "star_amount": "30"
+          "cause": "Anakin you're breaking my heart, you're going down a path I can't follow."
         }
       },
       "response_data": [
-        "precisa ser da mesma instituicao"
+        "Deve pertencer a mesma instituição"
       ],
       "code": "422",
+      "show_in_doc": 0,
+      "recorded": true
+    }
+  ],
+  "rewards#create": [
+    {
+      "verb": "POST",
+      "path": "/v1/rewards",
+      "versions": [
+        "1.0"
+      ],
+      "query": null,
+      "request_data": {
+        "reward": {
+          "cost": "93",
+          "description": "Mundo will go where he pleases!",
+          "name": "Ten FIDY",
+          "quantity_available": "33",
+          "quantity_total": "20"
+        }
+      },
+      "response_data": {
+        "name": "Ten FIDY",
+        "cost": 93,
+        "description": "Mundo will go where he pleases!",
+        "organization_id": 22
+      },
+      "code": "200",
+      "show_in_doc": 1,
+      "recorded": true
+    },
+    {
+      "verb": "POST",
+      "path": "/v1/rewards",
+      "versions": [
+        "1.0"
+      ],
+      "query": null,
+      "request_data": {
+        "reward": {
+          "trading_name": "Brum EIRELI"
+        }
+      },
+      "response_data": [
+        "Cost translation missing: pt-BR.activerecord.errors.models.reward.attributes.cost.blank",
+        "Name translation missing: pt-BR.activerecord.errors.models.reward.attributes.name.blank"
+      ],
+      "code": "422",
+      "show_in_doc": 0,
+      "recorded": true
+    }
+  ],
+  "rewards#index": [
+    {
+      "verb": "GET",
+      "path": "/v1/rewards",
+      "versions": [
+        "1.0"
+      ],
+      "query": "",
+      "request_data": null,
+      "response_data": [
+        {
+          "name": "Some thing special",
+          "cost": 10,
+          "description": "lorem ipsum",
+          "organization_id": 28
+        }
+      ],
+      "code": "200",
+      "show_in_doc": 1,
+      "recorded": true
+    }
+  ],
+  "rewards#my_rewards": [
+    {
+      "verb": "GET",
+      "path": "/v1/rewards/my_rewards",
+      "versions": [
+
+      ],
+      "query": "",
+      "request_data": null,
+      "response_data": [
+
+      ],
+      "code": "200",
+      "show_in_doc": 0,
+      "recorded": true
+    }
+  ],
+  "rewards#show": [
+    {
+      "verb": "GET",
+      "path": "/v1/rewards/8",
+      "versions": [
+        "1.0"
+      ],
+      "query": "",
+      "request_data": null,
+      "response_data": {
+        "name": "Some thing special",
+        "cost": 10,
+        "description": "lorem ipsum",
+        "organization_id": 26
+      },
+      "code": "200",
+      "show_in_doc": 1,
+      "recorded": true
+    },
+    {
+      "verb": "GET",
+      "path": "/v1/rewards/9",
+      "versions": [
+        "1.0"
+      ],
+      "query": "",
+      "request_data": null,
+      "response_data": {
+        "message": "translation missing: pt-BR.pundit.reward_policy.show?"
+      },
+      "code": "403",
+      "show_in_doc": 0,
+      "recorded": true
+    }
+  ],
+  "rewards#update": [
+    {
+      "verb": "PUT",
+      "path": "/v1/rewards/6",
+      "versions": [
+        "1.0"
+      ],
+      "query": null,
+      "request_data": {
+        "reward": {
+          "name": "My reward"
+        }
+      },
+      "response_data": {
+        "name": "My reward",
+        "cost": 10,
+        "description": "lorem ipsum",
+        "organization_id": 24
+      },
+      "code": "200",
+      "show_in_doc": 1,
+      "recorded": true
+    },
+    {
+      "verb": "PUT",
+      "path": "/v1/rewards/7",
+      "versions": [
+        "1.0"
+      ],
+      "query": null,
+      "request_data": {
+        "name": "My reward"
+      },
+      "response_data": {
+        "message": "translation missing: pt-BR.pundit.reward_policy.update?"
+      },
+      "code": "403",
       "show_in_doc": 0,
       "recorded": true
     }
@@ -454,26 +580,19 @@
       "query": null,
       "request_data": {
         "user": {
-          "email": "cesar@rempelanderson.com",
-          "name": "Darth Vader",
+          "email": "aniya_blick@ullrichpagac.name",
+          "name": "Finn",
           "password": "Wannacry",
           "password_confirmation": "Wannacry"
         }
       },
       "response_data": {
-        "id": 47,
-        "provider": "email",
-        "uid": "cesar@rempelanderson.com",
-        "allow_password_change": false,
-        "name": "Darth Vader",
-        "image": null,
-        "email": "cesar@rempelanderson.com",
+        "id": 71,
+        "name": "Finn",
+        "email": "aniya_blick@ullrichpagac.name",
         "secondary_email": null,
-        "created_by_user_id": null,
-        "active": false,
-        "role": "dummy",
-        "created_at": "2018-06-04T13:51:19.645Z",
-        "updated_at": "2018-06-04T13:51:19.645Z"
+        "star_bag": null,
+        "organization": null
       },
       "code": "201",
       "show_in_doc": 1,
@@ -488,13 +607,13 @@
       "query": null,
       "request_data": {
         "user": {
-          "name": "Jyn Erso",
+          "name": "Luke Skywalker",
           "password": "Wannacry",
           "password_confirmation": "Wannacry"
         }
       },
       "response_data": [
-        "Email can't be blank"
+        "Email translation missing: pt-BR.activerecord.errors.models.user.attributes.email.blank"
       ],
       "code": "422",
       "show_in_doc": 0,

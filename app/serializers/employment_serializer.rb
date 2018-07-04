@@ -1,5 +1,5 @@
 class EmploymentSerializer < ActiveModel::Serializer
-  attributes :name, :email, :created_at, :active
+  attributes :created_at
 
   def created_at
     object.created_at.strftime('%d/%m/%Y')

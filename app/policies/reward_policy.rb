@@ -7,14 +7,18 @@ class RewardPolicy
   end
 
   def show?
-    @user.organization.id == record.organization_id
+    @user.organization == record.organization
+  end
+
+  def create?
+    @user.org_admin?
+  end
+
+  def update?
+    @user.org_admin? && @user.organization == @record.organization
   end
 
   def create?
     true
-  end
-
-  def update?
-    @user.org_admin? && @user.organization_id == @record.organization_id
   end
 end
