@@ -40,7 +40,7 @@ class V1::RewardsController < ApplicationController
   def create
     @reward = Reward.new reward_params
 
-    # authorize @reward
+    authorize @reward
 
     if @reward.save
       render json: @reward

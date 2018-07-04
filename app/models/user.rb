@@ -1,6 +1,6 @@
 class User < ApplicationRecord
   # Include default devise modules.
-  devise :database_authenticatable, :registerable, :confirmable,
+  devise :database_authenticatable, :registerable,
           :recoverable, :rememberable, :trackable, :validatable
   has_one :employment
   has_one :star_bag
@@ -10,7 +10,7 @@ class User < ApplicationRecord
   enum role: { dummy: 0, org_admin: 1 }
   accepts_nested_attributes_for :phones, allow_destroy: true
 
-  after_create_commit :confirmation_instructions
+  # after_create_commit :confirmation_instructions
 
   include DeviseTokenAuth::Concerns::User
 
