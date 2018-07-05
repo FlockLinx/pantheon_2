@@ -22,5 +22,7 @@
       models:
         star_bag:
           attributes:
+            available_stars:
+              greater_than_or_equal_to: llalala
             base:
               required: deve ser preenchido

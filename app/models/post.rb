@@ -15,20 +15,21 @@ class Post < ApplicationRecord
   def star_exchanges
     donator_starbag = StarBag.find_by(user_id: donator_id)
     donator_starbag.available_stars -= amount
-    donator_starbag.update(user_id: donator_id,
-                           available_stars: donator_starbag.available_stars
-                          )
+    available_stars donator_starbag
+    donator_starbag.update(available_stars: donator_starbag.available_stars)
   end
 
   def beneficiary_star
     beneficiary_starbag = StarBag.find_by(user_id: beneficiary_id)
     beneficiary_starbag.star_amount += amount
-    beneficiary_starbag.update(user_id: beneficiary_id,
-                               star_amount: beneficiary_starbag.star_amount
-                              )
+    beneficiary_starbag.save!
   end
 
   private
+
+  def available_stars star_bag
+    errors.add(:base, :available_stars) unless star_bag.available_stars >= 0
+  end
 
   def same_organization
     errors.add(:base, :invalid) unless beneficiary&.organization.id == donator&.organization.id

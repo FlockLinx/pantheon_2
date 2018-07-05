@@ -27,7 +27,7 @@ class V1::PostsController < ApplicationController
   def update
     authorize @post
 
-    if @post.save
+    if @post.update post_params
       render json: @post
     else
       render json: @post.errors.full_messages, status: :unprocessable_entity

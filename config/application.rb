@@ -33,7 +33,7 @@ module Pantheon2
     config.api_only = true
     config.time_zone = 'Brasilia'
     config.i18n.default_locale = 'pt-BR'
-    config.i18n.load_path += Dir[Rails.root.join('config', 'locales', 'pt-BR', '*.{rb,yml}').to_s]
+    config.i18n.load_path += Dir[Rails.root.join('config', 'locales', 'pundit', 'pt-BR', '*.{rb,yml}').to_s]
     unless Rails.env.production?
       config.middleware.insert_before 0, Rack::Cors do
         allow do

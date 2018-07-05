@@ -3,7 +3,8 @@ class Organization < ApplicationRecord
 
   has_many :rewards
   has_many :employments
-  has_many :star_bags
+  has_many :posts
+
   has_many :users, through: :employments
   has_many :phones, dependent: :destroy, as: :phoneable, inverse_of: :phoneable
   has_one :address, dependent: :destroy, as: :addressable,

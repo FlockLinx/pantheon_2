@@ -28,3 +28,4 @@
               required: deve ser preenchido
               invalid: Deve pertencer a mesma instituição
               must_be_different: Não pode ser a mesma pessoa
+              available_stars: Estrelas insuficientes

@@ -16,7 +16,7 @@
         "name": "Some thing special",
         "cost": 10,
         "description": "lorem ipsum",
-        "acquired_at": "04/07/2018"
+        "acquired_at": "05/07/2018"
       },
       "code": "201",
       "show_in_doc": 1,
@@ -52,25 +52,25 @@
       "query": null,
       "request_data": {
         "contact": {
-          "email": "kian@marquardtokeefe.net",
-          "message": "Nng hnn-rowr roooarrgh roo huewaa?",
-          "name": "Sebulba",
-          "origin": "Felucia",
-          "phone": "1-192-522-7504",
-          "subject": "It's not impossible. I used to bullseye womp rats in my T-16 back home, they're not much bigger than two meters."
+          "email": "kasandra@reinger.info",
+          "message": "Ga ooma!",
+          "name": "Bail Organa",
+          "origin": "Dagobah",
+          "phone": "253-557-2504",
+          "subject": "You need a teacher. I can show you the ways of the Force."
         }
       },
       "response_data": {
         "id": 1,
-        "name": "Sebulba",
-        "email": "kian@marquardtokeefe.net",
-        "phone": "1-192-522-7504",
-        "subject": "It's not impossible. I used to bullseye womp rats in my T-16 back home, they're not much bigger than two meters.",
-        "origin": "Felucia",
-        "message": "Nng hnn-rowr roooarrgh roo huewaa?",
+        "name": "Bail Organa",
+        "email": "kasandra@reinger.info",
+        "phone": "253-557-2504",
+        "subject": "You need a teacher. I can show you the ways of the Force.",
+        "origin": "Dagobah",
+        "message": "Ga ooma!",
         "created_by_user_id": null,
-        "created_at": "2018-07-04T15:11:26.229-03:00",
-        "updated_at": "2018-07-04T15:11:26.229-03:00"
+        "created_at": "2018-07-05T16:01:33.978-03:00",
+        "updated_at": "2018-07-05T16:01:33.978-03:00"
       },
       "code": "201",
       "show_in_doc": 1,
@@ -85,10 +85,10 @@
       "query": null,
       "request_data": {
         "contact": {
-          "name": "Bendu",
-          "origin": "Felucia",
-          "phone": "(589) 960-5963",
-          "subject": "You will remove these restraints and leave this cell with the door open."
+          "name": "Yoda",
+          "origin": "Sullust",
+          "phone": "1-634-705-8368",
+          "subject": "We have no choice, General Calrissian! Our cruisers can't repel firepower of that magnitude!"
         }
       },
       "response_data": [
@@ -115,7 +115,7 @@
         }
       },
       "response_data": {
-        "created_at": "04/07/2018"
+        "created_at": "05/07/2018"
       },
       "code": "200",
       "show_in_doc": 1,
@@ -153,11 +153,11 @@
       "request_data": {
         "organization": {
           "stars_by_month": "20",
-          "trading_name": "de Sá Comércio"
+          "trading_name": "Pedroso, Roriz e Muniz"
         }
       },
       "response_data": {
-        "trading_name": "de Sá Comércio",
+        "trading_name": "Pedroso, Roriz e Muniz",
         "stars_by_month": 20,
         "organization_tags": [
 
@@ -180,7 +180,7 @@
       "query": null,
       "request_data": {
         "organization": {
-          "trading_name": "Hernandes-Modesto"
+          "trading_name": "Aroeira, Moraes e Santana"
         }
       },
       "response_data": [
@@ -202,10 +202,10 @@
       "request_data": null,
       "response_data": [
         {
-          "created_at": "04/07/2018"
+          "created_at": "05/07/2018"
         },
         {
-          "created_at": "04/07/2018"
+          "created_at": "05/07/2018"
         }
       ],
       "code": "200",
@@ -238,7 +238,7 @@
       "query": "",
       "request_data": null,
       "response_data": {
-        "trading_name": "Yango Carvalheira",
+        "trading_name": "Dra. Marcia da Veiga",
         "stars_by_month": 20,
         "organization_tags": [
 
@@ -326,17 +326,22 @@
         "post": {
           "amount": "10",
           "beneficiary_id": "31",
-          "cause": "Talk Jabba. (Tell that to Jabba.)"
+          "cause": "Remember your focus determines your reality.",
+          "tags": [
+            "Learning",
+            "Excellence"
+          ]
         }
       },
       "response_data": {
         "id": 1,
-        "donator": "Mirella Matoso",
-        "beneficiary": "Lavínia Matoso",
-        "star_amount": null,
-        "cause": "Talk Jabba. (Tell that to Jabba.)",
+        "donator": "Sra. Karla Porto",
+        "beneficiary": "Catarina Porteira",
+        "amount": 10,
+        "cause": "Remember your focus determines your reality.",
         "tags": [
-
+          "Learning",
+          "Excellence"
         ]
       },
       "code": "200",
@@ -353,12 +358,12 @@
       "request_data": {
         "post": {
           "amount": "30",
-          "beneficiary_id": "35",
-          "cause": "How you doin' Chewbacca? Still hanging around with this loser?"
+          "beneficiary_id": "36",
+          "cause": "The Republic doesn't exist out here. We must survive on our own."
         }
       },
       "response_data": [
-
+        "Estrelas insuficientes"
       ],
       "code": "422",
       "show_in_doc": 0,
@@ -374,8 +379,8 @@
       "request_data": {
         "post": {
           "amount": "30",
-          "beneficiary_id": "40",
-          "cause": "You can run, but you'll only die tired."
+          "beneficiary_id": "42",
+          "cause": "Remember your focus determines your reality."
         }
       },
       "response_data": [
@@ -395,14 +400,102 @@
       "request_data": {
         "post": {
           "amount": "30",
-          "beneficiary_id": "43",
-          "cause": "Anakin you're breaking my heart, you're going down a path I can't follow."
+          "beneficiary_id": "46",
+          "cause": "na meeto do buny dunko la cho ya. (you won't be able to get near a civilized system.)"
         }
       },
       "response_data": [
         "Deve pertencer a mesma instituição"
       ],
       "code": "422",
+      "show_in_doc": 0,
+      "recorded": true
+    }
+  ],
+  "posts#index": [
+    {
+      "verb": "GET",
+      "path": "/v1/posts",
+      "versions": [
+        "1.0"
+      ],
+      "query": "",
+      "request_data": null,
+      "response_data": [
+        {
+          "id": 4,
+          "donator": "Feliciano Carreira Jr.",
+          "beneficiary": "Rafaela da Rocha",
+          "amount": 2,
+          "cause": "Train yourself to let go of everything you fear to lose.",
+          "tags": [
+            "learning",
+            "Excellence"
+          ]
+        },
+        {
+          "id": 5,
+          "donator": "Feliciano Carreira Jr.",
+          "beneficiary": "Rafaela da Rocha",
+          "amount": 2,
+          "cause": "You know, that little droid is going to cause me a lot of trouble.",
+          "tags": [
+            "learning",
+            "Excellence"
+          ]
+        },
+        {
+          "id": 6,
+          "donator": "Feliciano Carreira Jr.",
+          "beneficiary": "Rafaela da Rocha",
+          "amount": 2,
+          "cause": "Fear is the path to the dark side... fear leads to anger... anger leads to hate... hate leads to suffering.",
+          "tags": [
+            "learning",
+            "Excellence"
+          ]
+        }
+      ],
+      "code": "200",
+      "show_in_doc": 1,
+      "recorded": true
+    }
+  ],
+  "posts#show": [
+    {
+      "verb": "GET",
+      "path": "/v1/posts/2",
+      "versions": [
+        "1.0"
+      ],
+      "query": "",
+      "request_data": null,
+      "response_data": {
+        "id": 2,
+        "donator": "Pedro Lucas Barros",
+        "beneficiary": "Suélen Carreira Filho",
+        "amount": 2,
+        "cause": "it is a test!",
+        "tags": [
+
+        ]
+      },
+      "code": "200",
+      "show_in_doc": 1,
+      "recorded": true
+    },
+    {
+      "verb": "GET",
+      "path": "/v1/posts/3",
+      "versions": [
+        "1.0"
+      ],
+      "query": "",
+      "request_data": null,
+      "response_data": {
+        "message": "Não autorizado para realizar essa ação"
+      },
+      "code": "403",
       "show_in_doc": 0,
       "recorded": true
     }
@@ -417,18 +510,19 @@
       "query": null,
       "request_data": {
         "reward": {
-          "cost": "93",
-          "description": "Mundo will go where he pleases!",
-          "name": "Ten FIDY",
-          "quantity_available": "33",
-          "quantity_total": "20"
+          "cost": "79",
+          "description": "Blindness is no impairment against a smelly enemy.",
+          "name": "Two Hearted Ale",
+          "quantity_available": "61",
+          "quantity_total": "90"
         }
       },
       "response_data": {
-        "name": "Ten FIDY",
-        "cost": 93,
-        "description": "Mundo will go where he pleases!",
-        "organization_id": 22
+        "id": 4,
+        "name": "Two Hearted Ale",
+        "cost": 79,
+        "description": "Blindness is no impairment against a smelly enemy.",
+        "organization_id": 28
       },
       "code": "200",
       "show_in_doc": 1,
@@ -443,7 +537,7 @@
       "query": null,
       "request_data": {
         "reward": {
-          "trading_name": "Brum EIRELI"
+          "trading_name": "Marins, Marins e do Prado"
         }
       },
       "response_data": [
@@ -452,6 +546,22 @@
       ],
       "code": "422",
       "show_in_doc": 0,
+      "recorded": true
+    }
+  ],
+  "rewards#destroy": [
+    {
+      "verb": "DELETE",
+      "path": "/v1/rewards/12",
+      "versions": [
+        "1.0"
+      ],
+      "query": null,
+      "request_data": {
+      },
+      "response_data": null,
+      "code": "204",
+      "show_in_doc": 1,
       "recorded": true
     }
   ],
@@ -466,10 +576,11 @@
       "request_data": null,
       "response_data": [
         {
+          "id": 10,
           "name": "Some thing special",
           "cost": 10,
           "description": "lorem ipsum",
-          "organization_id": 28
+          "organization_id": 34
         }
       ],
       "code": "200",
@@ -504,10 +615,11 @@
       "query": "",
       "request_data": null,
       "response_data": {
+        "id": 8,
         "name": "Some thing special",
         "cost": 10,
         "description": "lorem ipsum",
-        "organization_id": 26
+        "organization_id": 32
       },
       "code": "200",
       "show_in_doc": 1,
@@ -543,10 +655,11 @@
         }
       },
       "response_data": {
+        "id": 6,
         "name": "My reward",
         "cost": 10,
         "description": "lorem ipsum",
-        "organization_id": 24
+        "organization_id": 30
       },
       "code": "200",
       "show_in_doc": 1,
@@ -580,16 +693,16 @@
       "query": null,
       "request_data": {
         "user": {
-          "email": "aniya_blick@ullrichpagac.name",
-          "name": "Finn",
+          "email": "edythe_johnson@quigley.name",
+          "name": "Darth Sidious",
           "password": "Wannacry",
           "password_confirmation": "Wannacry"
         }
       },
       "response_data": {
-        "id": 71,
-        "name": "Finn",
-        "email": "aniya_blick@ullrichpagac.name",
+        "id": 93,
+        "name": "Darth Sidious",
+        "email": "edythe_johnson@quigley.name",
         "secondary_email": null,
         "star_bag": null,
         "organization": null
@@ -607,7 +720,7 @@
       "query": null,
       "request_data": {
         "user": {
-          "name": "Luke Skywalker",
+          "name": "Boba Fett",
           "password": "Wannacry",
           "password_confirmation": "Wannacry"
         }

@@ -1,0 +1,7 @@
+'pt-BR':
+  pundit:
+    post_policy:
+      show?: Não autorizado para realizar essa ação
+      create?: Não autorizado para realizar essa ação
+      update?: Não autorizado para realizar essa ação
+      index?: Não autorizado para realizar essa ação

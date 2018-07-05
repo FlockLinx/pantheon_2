@@ -7,7 +7,7 @@ class PostPolicy
   end
 
   def index?
-    true
+    @user.organization.id == @record.pluck(:organization_id).first && @user.employment.active_job?
   end
 
   def show?
@@ -15,10 +15,10 @@ class PostPolicy
   end
 
   def create?
-    update?
+    @user.organization.id == @record.organization_id && @user.employment.active_job?
   end
 
   def update?
-    @user.organization.id == @record.organization_id && @user.employment.active_job?
+    @user.id == @record.donator_id && @user.employment.active_job? || @user.org_admin? && @record.organization_id == @user.organization.id
   end
 end

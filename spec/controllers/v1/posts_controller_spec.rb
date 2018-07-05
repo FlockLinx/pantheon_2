@@ -3,6 +3,8 @@ require 'rails_helper'
 RSpec.describe V1::PostsController, type: :controller do
   let!(:organization) { create(:organization) }
   let!(:user) { create(:user) }
+  let!(:user2) { create(:user) }
+
 
   let!(:random_user) { create(:user) }
 
@@ -12,10 +14,12 @@ RSpec.describe V1::PostsController, type: :controller do
 
   let!(:employment) { create(:employment, user: user,
                               organization: organization) }
+
+  let!(:employment2) { create(:employment, user: user2,
+                              organization: organization) }
+
   let!(:star_bag) { create(:star_bag, user: user,
                            organization: user.organization) }
-
- # let!(:post) { create(:post, beneficiary_id: user.id, donator_id: organization.owner.id, organization_id: organization.id, star_amount: 2) }
 
   before do
     auth_headers = user.create_new_auth_token
@@ -30,7 +34,8 @@ RSpec.describe V1::PostsController, type: :controller do
         	post: {
              beneficiary_id: organization.owner.id,
              cause: Faker::StarWars.quote,
-             amount: 10
+             amount: 10,
+             tags: ['Learning', 'Excellence']
         	}
         }
         expect{
@@ -92,42 +97,68 @@ RSpec.describe V1::PostsController, type: :controller do
     end
   end
 
-  # describe 'GET post show' do
-  #
-  #   context 'post infos' do
-  #
-  #     before do
-  #       auth_headers = user.create_new_auth_token
-  #       request.headers.merge!(auth_headers)
-  #     end
-  #
-  #     it 'should get post', :show_in_doc do
-  #       get :show, params: { id: post.id }
-  #       expect(response).to have_http_status(200)
-  #     end
-  #   end
-  #
-  #   context 'post infos from another organization' do
-  #
-  #     before do
-  #       auth_headers = random_user.create_new_auth_token
-  #       request.headers.merge!(auth_headers)
-  #     end
-  #
-  #     it 'should get post', :show_in_doc do
-  #       get :show, params: { id: post.id }
-  #       expect(response).to have_http_status(403)
-  #     end
-  #   end
-  # end
-  #
-  #
-  # describe 'GET posts feed' do
-  #   context 'GET posts feed from organization' do
-  #     it 'should get post feed', :show_in_doc do
-  #       get :index
-  #       expect(response).to have_http_status(200)
-  #     end
-  #   end
-  # end
+  describe 'GET post show' do
+
+    context 'post infos' do
+
+      before do
+        auth_headers = user.create_new_auth_token
+        request.headers.merge!(auth_headers)
+      end
+
+      it 'should get post', :show_in_doc do
+        post = Post.create(beneficiary_id: organization.owner.id,
+                           donator_id: user.id,
+                           amount: 2,
+                           organization_id: organization.id,
+                           cause: 'it is a test!' )
+
+        get :show, params: { id: post.id }
+        expect(response).to have_http_status(200)
+      end
+    end
+
+    context 'post infos from another organization' do
+
+      before do
+        auth_headers = random_user.create_new_auth_token
+        request.headers.merge!(auth_headers)
+      end
+
+      it 'should get post', :show_in_doc do
+        post = Post.create(beneficiary_id: organization.owner.id,
+                           donator_id: user.id,
+                           amount: 2,
+                           organization_id: organization.id,
+                           cause: 'it is a failing test!' )
+        get :show, params: { id: Post.last.id }
+        expect(response).to have_http_status(403)
+      end
+    end
+  end
+
+
+  describe 'GET posts feed' do
+
+    context 'GET posts feed from organization' do
+
+      before do
+        auth_headers = user.create_new_auth_token
+        request.headers.merge!(auth_headers)
+      end
+
+      it 'should get post feed', :show_in_doc do
+        3.times do
+          Post.create(beneficiary_id: organization.owner.id,
+                             donator_id: user.id,
+                             amount: 2,
+                             organization_id: organization.id,
+                             cause: Faker::StarWars.quote,
+                             tags: ['learning', 'Excellence'])
+        end
+        get :index
+        expect(response).to have_http_status(200)
+      end
+    end
+  end
 end
