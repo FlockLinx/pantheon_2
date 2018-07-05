@@ -1,4 +1,4 @@
 class RewardSerializer < ActiveModel::Serializer
 
-  attributes :name, :cost, :description, :organization_id
+  attributes :id, :name, :cost, :description, :organization_id
 end

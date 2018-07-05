@@ -140,4 +140,22 @@ RSpec.describe V1::RewardsController, type: :controller do
       end
     end
   end
+
+  describe 'DESTROY reward object' do
+
+    context 'Destroy some reward' do
+
+      before do
+        auth_headers = organization.owner.create_new_auth_token
+        request.headers.merge!(auth_headers)
+      end
+
+      it 'should get acquired reward list', :show_in_doc do
+
+        expect{
+          delete :destroy, params: { id: reward.id }
+        }.to change(Reward, :count).by -1
+      end
+    end
+  end
 end
