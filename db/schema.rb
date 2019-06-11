@@ -144,7 +144,7 @@ ActiveRecord::Schema.define(version: 2018_06_12_142217) do
     t.string "secondary_email"
     t.integer "created_by_user_id"
     t.boolean "active", default: false
-    t.integer "role", default: 0
+    t.string "role"
     t.json "tokens"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
