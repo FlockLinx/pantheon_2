@@ -1,24 +1,11 @@
-# README
+[![Maintainability](https://api.codeclimate.com/v1/badges/d6f48d38cb1382665af4/maintainability)](https://codeclimate.com/github/FlockLinx/pantheon_2/maintainability)
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+[![Test Coverage](https://api.codeclimate.com/v1/badges/d6f48d38cb1382665af4/test_coverage)](https://codeclimate.com/github/FlockLinx/pantheon_2/test_coverage)
 
-Things you may want to cover:
 
-* Ruby version
+Um side project.
 
-* System dependencies
+## Contexto
 
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+Projeto que cria um programa de recompensas entre colegas de trabalho visando
+reconhecimento de pequenas vitorias diarias
