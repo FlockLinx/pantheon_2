@@ -97,8 +97,8 @@ GEM
       tzinfo
     factory_bot (4.10.0)
       activesupport (>= 3.0.0)
-    faker (1.8.7)
-      i18n (>= 0.7)
+    faker (2.4.0)
+      i18n (~> 1.6.0)
     ffi (1.9.25)
     fugit (1.2.2)
       et-orbi (~> 1.1, >= 1.1.8)
